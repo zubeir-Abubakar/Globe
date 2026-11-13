@@ -38,17 +38,20 @@ export function MaskedText({
       return;
     }
 
-    const groups: { top: number; words: string[] }[] = [];
-    for (const word of children.matchAll(/\S+/g)) {
-      const range = document.createRange();
-      range.setStart(textNode, word.index);
-      range.setEnd(textNode, word.index + word[0].length);
-      const top = range.getBoundingClientRect().top;
-      const line = groups.find((group) => Math.abs(group.top - top) < 2);
-      if (line) line.words.push(word[0]);
-      else groups.push({ top, words: [word[0]] });
-    }
-    if (groups.length) setLines(groups.map((group) => group.words.join(" ")));
+    const frame = requestAnimationFrame(() => {
+      const groups: { top: number; words: string[] }[] = [];
+      for (const word of children.matchAll(/\S+/g)) {
+        const range = document.createRange();
+        range.setStart(textNode, word.index);
+        range.setEnd(textNode, word.index + word[0].length);
+        const top = range.getBoundingClientRect().top;
+        const line = groups.find((group) => Math.abs(group.top - top) < 2);
+        if (line) line.words.push(word[0]);
+        else groups.push({ top, words: [word[0]] });
+      }
+      if (groups.length) setLines(groups.map((group) => group.words.join(" ")));
+    });
+    return () => cancelAnimationFrame(frame);
   }, [children, lines]);
 
   useEffect(() => {
@@ -174,11 +177,14 @@ export function Reveal({
   const [state, setState] = useState<"idle" | "armed" | "visible">("idle");
 
   useLayoutEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setState("visible");
-      return;
-    }
-    setState("armed");
+    const frame = requestAnimationFrame(() => {
+      setState(
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "visible"
+          : "armed",
+      );
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {
@@ -241,109 +247,5 @@ export function Reveal({
     >
       {children}
     </TagName>
-  );
-}
-
-export type Milestone = {
-  value: number;
-  suffix?: string;
-  label: string;
-};
-
-export function MilestoneStats({
-  milestones,
-  label,
-}: {
-  milestones: Milestone[];
-  label: string;
-}) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const milestoneRef = useRef(milestones);
-  const [values, setValues] = useState(() =>
-    milestoneRef.current.map(({ value }) => value),
-  );
-
-  useLayoutEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    setValues(milestoneRef.current.map(() => 0));
-  }, []);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-    let animationFrame = 0;
-    let checkFrame = 0;
-    let startedAt: number | undefined;
-    let hasStarted = false;
-    const duration = 1500;
-    let observer: IntersectionObserver | undefined;
-
-    const animate = (time: number) => {
-      if (startedAt === undefined) startedAt = time;
-      const progress = Math.min((time - startedAt) / duration, 1);
-      const eased = 1 - (1 - progress) ** 3;
-      setValues(milestoneRef.current.map(({ value }) => Math.round(value * eased)));
-      if (progress < 1) animationFrame = requestAnimationFrame(animate);
-    };
-    const start = () => {
-      if (hasStarted) return;
-      hasStarted = true;
-      animationFrame = requestAnimationFrame(animate);
-    };
-    const checkVisibility = () => {
-      checkFrame = 0;
-      const bounds = section.getBoundingClientRect();
-      if (bounds.top < window.innerHeight && bounds.bottom > 0) start();
-    };
-    const scheduleVisibilityCheck = () => {
-      if (!checkFrame) checkFrame = requestAnimationFrame(checkVisibility);
-    };
-    if ("IntersectionObserver" in window) {
-      observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) start();
-        },
-        { threshold: 0.25 },
-      );
-      observer.observe(section);
-    }
-    window.addEventListener("scroll", scheduleVisibilityCheck, { passive: true });
-    window.addEventListener("resize", scheduleVisibilityCheck);
-    checkVisibility();
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const finishWithoutMotion = () => {
-      if (!preference.matches) return;
-      hasStarted = true;
-      observer?.disconnect();
-      if (animationFrame) cancelAnimationFrame(animationFrame);
-      setValues(milestoneRef.current.map(({ value }) => value));
-    };
-    preference.addEventListener("change", finishWithoutMotion);
-    return () => {
-      observer?.disconnect();
-      window.removeEventListener("scroll", scheduleVisibilityCheck);
-      window.removeEventListener("resize", scheduleVisibilityCheck);
-      preference.removeEventListener("change", finishWithoutMotion);
-      cancelAnimationFrame(animationFrame);
-      cancelAnimationFrame(checkFrame);
-    };
-  }, []);
-
-  return (
-    <section className="trust-row" ref={sectionRef} aria-label={label}>
-      {milestones.map(({ value, suffix = "", label }, index) => (
-        <div className="trust-item" key={`${value}-${label}`}>
-          <strong aria-hidden="true">
-            {values[index]}{suffix}
-          </strong>
-          <span className="visually-hidden">
-            {value}{suffix}
-          </span>
-          <span>{label}</span>
-        </div>
-      ))}
-    </section>
   );
 }

@@ -2,13 +2,19 @@
   "name": "globe-harvest-web",
   "version": "1.0.0",
   "private": true,
-  "description": "Globe Harvest — premium fresh produce import, export and wholesale website",
+  "description": "A modern multilingual fresh-produce trading and catalogue website for the independent Globe Harvest demonstration brand.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "preview": "next start",
     "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
     "art": "node scripts/generate-art.mjs"
+  },
+  "engines": {
+    "node": ">=20.9.0",
+    "npm": ">=10.0.0"
   },
   "dependencies": {
     "next": "^16.4.4",
@@ -20,6 +26,8 @@
     "@types/node": "^22.15.30",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.7",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
     "typescript": "^5.8.3"
   }
 }

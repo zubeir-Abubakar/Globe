@@ -11,19 +11,11 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const ART_DIR = join(process.cwd(), "public", "art");
-const BRAND_DIR = join(process.cwd(), "public", "brand");
 mkdirSync(ART_DIR, { recursive: true });
-mkdirSync(BRAND_DIR, { recursive: true });
 
 const W = 1200;
 const H = 900;
-const BRAND = {
-  ink: "#14352a",
-  leaf: "#2f5d45",
-  gold: "#c08a3e",
-  ivory: "#faf7ef",
-  clay: "#b4553f",
-};
+
 
 function frame(id, palette, body, angle = 0) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img">
@@ -401,21 +393,6 @@ const editorial = [
       <path d="M-300 230h660" stroke="#8a7449" stroke-width="3" stroke-dasharray="10 14"/>
     </g>`,
   },
-  {
-    file: "hero",
-    id: "hero",
-    palette: { bg1: "#17402f", bg2: "#0d271d", glow: "#3f6f52", ring: "#7fa085", hill: "#1e4a36" },
-    body: `<g>
-      <circle cx="380" cy="-240" r="260" fill="#f3ead3" opacity="0.14"/>
-      <circle cx="380" cy="-240" r="200" fill="none" stroke="#c08a3e" stroke-width="2" opacity="0.5"/>
-      <g transform="translate(-260 60) scale(0.72)">${motifs.citrus({ skin: "#e08a33", flesh: "#f0b25a", core: "#fdf3dd", leaf: "#c9d6b0", shadow: "#0b1f17" })}</g>
-      <g transform="translate(40 -60) scale(0.62)">${motifs.grapes({ grape: "#8a6a7c", leaf: "#b9c9a4", stem: "#7c5f45", shadow: "#0b1f17" })}</g>
-      <g transform="translate(300 110) scale(0.58)">${motifs.mangoes({ skin: "#e7a63c", shade: "#d07a24", leaf: "#8fb07a", stem: "#b9a17b", shadow: "#0b1f17" })}</g>
-      <g fill="none" stroke="#f3ead3" stroke-width="1" opacity="0.2">
-        <path d="M-560 250Q0 140 560 250M-560 320Q0 210 560 320"/>
-      </g>
-    </g>`,
-  },
 ];
 
 for (const [category, space] of Object.entries(products)) {
@@ -460,57 +437,4 @@ for (const item of editorial) {
   writeFileSync(join(ART_DIR, `${item.file}.svg`), svg);
 }
 
-const logoMark = `
-  <circle cx="60" cy="60" r="55" fill="${BRAND.ink}"/>
-  <circle cx="60" cy="60" r="40" fill="none" stroke="${BRAND.ivory}" stroke-width="1.6" opacity="0.5"/>
-  <path d="M28 66c14-2 24-10 32-24 8 14 18 22 32 24" fill="none" stroke="${BRAND.gold}" stroke-width="3" stroke-linecap="round"/>
-  <path d="M60 26c16 0 28 12 28 28 0 18-14 32-28 40-14-8-28-22-28-40 0-16 12-28 28-28Z" fill="none" stroke="${BRAND.ivory}" stroke-width="1.6" opacity="0.7"/>
-  <path d="M60 44c9 0 15 7 15 15 0 10-8 18-15 23-7-5-15-13-15-23 0-8 6-15 15-15Z" fill="${BRAND.gold}"/>
-  <path d="M60 54c4 0 6 3 6 6 0 5-3 8-6 11-3-3-6-6-6-11 0-3 2-6 6-6Z" fill="${BRAND.ink}"/>
-`;
-
-writeFileSync(
-  join(BRAND_DIR, "logo-mark.svg"),
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Globe Harvest emblem"><title>Globe Harvest</title>${logoMark}</svg>`,
-);
-
-writeFileSync(
-  join(BRAND_DIR, "logo.svg"),
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" role="img" aria-label="Globe Harvest">
-  <title>Globe Harvest</title>
-  <g>${logoMark}</g>
-  <text x="140" y="57" font-family="Georgia, 'Times New Roman', serif" font-size="40" letter-spacing="2.4" fill="${BRAND.ink}">GLOBE</text>
-  <text x="140" y="94" font-family="Georgia, 'Times New Roman', serif" font-size="40" letter-spacing="2.4" fill="${BRAND.ink}">HARVEST</text>
-  <line x1="142" y1="106" x2="330" y2="106" stroke="${BRAND.gold}" stroke-width="2"/>
-</svg>`,
-);
-
-writeFileSync(
-  join(BRAND_DIR, "logo-inverse.svg"),
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" role="img" aria-label="Globe Harvest">
-  <title>Globe Harvest</title>
-  <g transform="translate(0 0)">
-    <circle cx="60" cy="60" r="55" fill="${BRAND.ivory}"/>
-    <circle cx="60" cy="60" r="40" fill="none" stroke="${BRAND.ink}" stroke-width="1.6" opacity="0.4"/>
-    <path d="M28 66c14-2 24-10 32-24 8 14 18 22 32 24" fill="none" stroke="${BRAND.gold}" stroke-width="3" stroke-linecap="round"/>
-    <path d="M60 26c16 0 28 12 28 28 0 18-14 32-28 40-14-8-28-22-28-40 0-16 12-28 28-28Z" fill="none" stroke="${BRAND.ink}" stroke-width="1.6" opacity="0.5"/>
-    <path d="M60 44c9 0 15 7 15 15 0 10-8 18-15 23-7-5-15-13-15-23 0-8 6-15 15-15Z" fill="${BRAND.gold}"/>
-    <path d="M60 54c4 0 6 3 6 6 0 5-3 8-6 11-3-3-6-6-6-11 0-3 2-6 6-6Z" fill="${BRAND.ivory}"/>
-  </g>
-  <text x="140" y="57" font-family="Georgia, 'Times New Roman', serif" font-size="40" letter-spacing="2.4" fill="${BRAND.ivory}">GLOBE</text>
-  <text x="140" y="94" font-family="Georgia, 'Times New Roman', serif" font-size="40" letter-spacing="2.4" fill="${BRAND.ivory}">HARVEST</text>
-  <line x1="142" y1="106" x2="330" y2="106" stroke="${BRAND.gold}" stroke-width="2"/>
-</svg>`,
-);
-
-writeFileSync(
-  join(BRAND_DIR, "icon.svg"),
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Globe Harvest">
-  <rect width="120" height="120" rx="26" fill="${BRAND.ink}"/>
-  <path d="M30 66c13-2 23-10 30-23 7 13 17 21 30 23" fill="none" stroke="${BRAND.gold}" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M60 24c16 0 28 12 28 28 0 18-14 32-28 40-14-8-28-22-28-40 0-16 12-28 28-28Z" fill="none" stroke="${BRAND.ivory}" stroke-width="2" opacity="0.75"/>
-  <path d="M60 44c9 0 15 7 15 15 0 10-8 18-15 23-7-5-15-13-15-23 0-8 6-15 15-15Z" fill="${BRAND.gold}"/>
-</svg>`,
-);
-
-console.log("Artwork written to public/art and public/brand.");
+console.log("Artwork written to public/art.");

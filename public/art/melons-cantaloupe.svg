@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img">
   <defs>
-    <linearGradient id="bg-melons-canteloupe" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="bg-melons-cantaloupe" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#eef1e2"/>
       <stop offset="1" stop-color="#e0e6ce"/>
     </linearGradient>
-    <radialGradient id="glow-melons-canteloupe" cx="62%" cy="18%" r="78%">
+    <radialGradient id="glow-melons-cantaloupe" cx="62%" cy="18%" r="78%">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.7"/>
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
-    <clipPath id="clip-melons-canteloupe"><rect width="1200" height="900"/></clipPath>
+    <clipPath id="clip-melons-cantaloupe"><rect width="1200" height="900"/></clipPath>
   </defs>
-  <g clip-path="url(#clip-melons-canteloupe)">
-    <rect width="1200" height="900" fill="url(#bg-melons-canteloupe)"/>
+  <g clip-path="url(#clip-melons-cantaloupe)">
+    <rect width="1200" height="900" fill="url(#bg-melons-cantaloupe)"/>
     <circle cx="1030" cy="120" r="330" fill="#fbfcef" opacity="0.5"/>
-    <circle cx="1030" cy="120" r="330" fill="url(#glow-melons-canteloupe)"/>
+    <circle cx="1030" cy="120" r="330" fill="url(#glow-melons-cantaloupe)"/>
     <circle cx="120" cy="860" r="280" fill="none" stroke="#a7b489" stroke-width="1.5" opacity="0.65"/>
     <circle cx="120" cy="860" r="205" fill="none" stroke="#a7b489" stroke-width="1" opacity="0.45"/>
     <path d="M0 742C214 690 386 788 602 756s364-128 598-74v218H0Z" fill="#cfd9b2" opacity="0.5"/>
