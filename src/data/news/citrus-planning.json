@@ -1,0 +1,46 @@
+{
+  "slug": "planning-citrus-beyond-the-calendar",
+  "date": "2026-06-22",
+  "image": "/art/news-3.svg",
+  "titles": {
+    "en": "Planning citrus beyond the calendar",
+    "de": "Zitrusfrüchte jenseits des Kalenders planen",
+    "fr": "Planifier les agrumes au-delà du calendrier",
+    "it": "Pianificare gli agrumi oltre il calendario",
+    "es": "Planificar los cítricos más allá del calendario"
+  },
+  "excerpt": {
+    "en": "Colour, brix and rind condition move between lots. A programme built only on week numbers will eventually meet a week that behaves differently.",
+    "de": "Farbe, Brix und Schalenzustand variieren zwischen Partien. Ein Programm, das nur auf Kalenderwochen baut, trifft früher oder später auf eine Woche, die anders reagiert.",
+    "fr": "Couleur, brix et état de l'écorce varient d'un lot à l'autre. Un programme fondé uniquement sur les semaines finira par rencontrer une semaine qui se comporte autrement.",
+    "it": "Colore, brix e condizione della buccia variano tra i lotti. Un programma basato solo sulle settimane prima o poi incontra una settimana che si comporta diversamente.",
+    "es": "El color, el brix y el estado de la corteza varían entre lotes. Un programa basado solo en semanas acabará encontrando una semana que se comporte de otra manera."
+  },
+  "body": {
+    "en": [
+      "Citrus programmes are often written as a calendar: these weeks from this origin, those weeks from another. The calendar is a useful starting point, but fruit does not read it. Colour development, brix and rind condition shift with heat units, rainfall and rootstock, and they shift differently from one block to the next.",
+      "A more resilient programme defines a quality window rather than a fixed week: minimum colour score, brix range and rind tolerance, with an agreed response if a lot falls outside it. That gives the buyer a predictable product and the grower a fair chance to meet the specification.",
+      "This note is illustrative demonstration content for the Globe Harvest website and does not describe a live commercial programme."
+    ],
+    "de": [
+      "Zitrusprogramme werden oft als Kalender geschrieben: diese Wochen aus dieser Herkunft, jene Wochen aus einer anderen. Der Kalender ist ein nützlicher Ausgangspunkt, aber die Frucht liest ihn nicht. Farbentwicklung, Brix und Schalenzustand verschieben sich mit Wärmesumme, Niederschlag und Unterlage – und von Parzelle zu Parzelle unterschiedlich.",
+      "Ein robusteres Programm definiert ein Qualitätsfenster statt einer festen Woche: minimale Farbnote, Brix-Bereich und Schalentoleranz, mit einer vereinbarten Reaktion, wenn eine Partie ausserhalb liegt. Das gibt dem Käufer ein planbares Produkt und dem Produzenten eine faire Chance, die Spezifikation zu erfüllen.",
+      "Dieser Beitrag ist illustrativer Demonstrationsinhalt der Globe-Harvest-Website und beschreibt kein laufendes Handelsprogramm."
+    ],
+    "fr": [
+      "Les programmes d'agrumes s'écrivent souvent comme un calendrier : ces semaines depuis une origine, celles-ci depuis une autre. Le calendrier est un point de départ utile, mais le fruit ne le lit pas. Le développement de la couleur, le brix et l'état de l'écorce évoluent avec les degrés-jours, la pluie et le porte-greffe, et diffèrent d'une parcelle à l'autre.",
+      "Un programme plus robuste définit une fenêtre de qualité plutôt qu'une semaine fixe : note de couleur minimale, plage de brix et tolérance d'écorce, avec une réaction convenue si un lot sort de cette fenêtre. L'acheteur gagne un produit prévisible et le producteur une chance équitable de respecter la spécification.",
+      "Cette note est un contenu de démonstration pour le site Globe Harvest et ne décrit pas un programme commercial réel."
+    ],
+    "it": [
+      "I programmi degli agrumi vengono spesso scritti come un calendario: queste settimane da un'origine, quelle da un'altra. Il calendario è un buon punto di partenza, ma il frutto non lo legge. Sviluppo del colore, brix e condizione della buccia cambiano con le unità di calore, le piogge e il portinnesto, e cambiano diversamente da un appezzamento all'altro.",
+      "Un programma più solido definisce una finestra di qualità invece di una settimana fissa: punteggio minimo di colore, intervallo di brix e tolleranza della buccia, con una risposta concordata se un lotto esce dalla finestra. L'acquirente ottiene un prodotto prevedibile e il produttore una possibilità equa di rispettare la specifica.",
+      "Questa nota è contenuto dimostrativo per il sito Globe Harvest e non descrive un programma commerciale reale."
+    ],
+    "es": [
+      "Los programas de cítricos suelen escribirse como un calendario: estas semanas desde un origen, aquellas desde otro. El calendario es un buen punto de partida, pero la fruta no lo lee. El desarrollo del color, el brix y el estado de la corteza cambian con las unidades de calor, la lluvia y el portainjerto, y lo hacen de forma distinta en cada parcela.",
+      "Un programa más resistente define una ventana de calidad en lugar de una semana fija: puntuación mínima de color, rango de brix y tolerancia de corteza, con una respuesta acordada si un lote queda fuera. El comprador obtiene un producto previsible y el productor una oportunidad justa de cumplir la especificación.",
+      "Esta nota es contenido ilustrativo de demostración del sitio Globe Harvest y no describe un programa comercial real."
+    ]
+  }
+}

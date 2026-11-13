@@ -1,0 +1,59 @@
+{
+  "id": "vegetables",
+  "names": {
+    "en": "Fresh vegetables",
+    "de": "Frisches Gemüse",
+    "fr": "Légumes frais",
+    "it": "Verdure fresche",
+    "es": "Hortalizas frescas"
+  },
+  "description": {
+    "en": "Field and greenhouse vegetables with firm texture, clean trim and consistent sizing. Packed for retail, wholesale and food-service kitchens.",
+    "de": "Feld- und Gewächshausgemüse mit fester Textur, sauberem Putzschnitt und gleichmässiger Grösse. Verpackt für Detailhandel, Grosshandel und Gastronomieküchen.",
+    "fr": "Des légumes de plein champ et de serre, à texture ferme, parage net et calibrage régulier. Conditionnés pour le détail, le gros et les cuisines de restauration.",
+    "it": "Ortaggi di campo e serra con tessitura soda, pulizia accurata e calibro costante. Confezionati per distribuzione, ingrosso e cucine della ristorazione.",
+    "es": "Hortalizas de campo e invernadero con textura firme, limpieza cuidada y calibres constantes. Envasadas para minoristas, mayoristas y cocinas de restauración."
+  },
+  "image": "/art/vegetables.svg",
+  "products": [
+    {
+      "slug": "carrots",
+      "name": { "en": "Carrots", "de": "Karotten", "fr": "Carottes", "it": "Carote", "es": "Zanahorias" },
+      "note": {
+        "en": "Sweet, crisp carrots with a smooth skin and strong colour, packed in bunches, bags and catering cases.",
+        "de": "Süsse, knackige Karotten mit glatter Schale und kräftiger Farbe, verpackt in Bunden, Beuteln und Gastronomiekisten.",
+        "fr": "Des carottes douces et croquantes, à peau lisse et belle couleur, conditionnées en bottes, sachets et caisses de restauration.",
+        "it": "Carote dolci e croccanti, con buccia liscia e colore intenso, confezionate in mazzi, sacchetti e cassette per la ristorazione.",
+        "es": "Zanahorias dulces y crujientes, de piel lisa y color intenso, envasadas en manojos, bolsas y cajas de restauración."
+      },
+      "image": "/art/vegetables-carrots.svg",
+      "regions": ["southern-europe", "north-africa", "latin-america"]
+    },
+    {
+      "slug": "bell-peppers",
+      "name": { "en": "Bell peppers", "de": "Paprika", "fr": "Poivrons", "it": "Peperoni dolci", "es": "Pimientos" },
+      "note": {
+        "en": "Thick-walled red, yellow and green peppers with a glossy finish and a sweet, crunchy bite.",
+        "de": "Fleischige rote, gelbe und grüne Paprika mit glänzender Haut und süssem, knackigem Biss.",
+        "fr": "Des poivrons rouges, jaunes et verts à chair épaisse, peau brillante et croquant sucré.",
+        "it": "Peperoni rossi, gialli e verdi con polpa spessa, buccia lucida e croccantezza dolce.",
+        "es": "Pimientos rojos, amarillos y verdes de pared gruesa, piel brillante y bocado dulce y crujiente."
+      },
+      "image": "/art/vegetables-peppers.svg",
+      "regions": ["southern-europe", "north-africa"]
+    },
+    {
+      "slug": "leafy-greens",
+      "name": { "en": "Leafy greens", "de": "Blattgemüse", "fr": "Légumes-feuilles", "it": "Verdure a foglia", "es": "Hortalizas de hoja" },
+      "note": {
+        "en": "Crisp, well-trimmed leafy greens cooled quickly after harvest and packed to protect the leaf.",
+        "de": "Knackiges, sauber geputztes Blattgemüse, nach der Ernte schnell gekühlt und blatt-schonend verpackt.",
+        "fr": "Des légumes-feuilles croquants et bien parés, refroidis rapidement après récolte et emballés pour protéger la feuille.",
+        "it": "Verdure a foglia croccanti e ben pulite, raffreddate rapidamente dopo la raccolta e confezionate per proteggere la foglia.",
+        "es": "Hortalizas de hoja crujientes y bien limpias, enfriadas rápidamente tras la cosecha y envasadas para proteger la hoja."
+      },
+      "image": "/art/vegetables-leafy-greens.svg",
+      "regions": ["southern-europe", "north-africa", "latin-america"]
+    }
+  ]
+}

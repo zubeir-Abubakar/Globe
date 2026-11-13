@@ -1,12 +1,14 @@
 {
-  "name": "ppo-services-web",
+  "name": "globe-harvest-web",
   "version": "1.0.0",
   "private": true,
+  "description": "Globe Harvest — premium fresh produce import, export and wholesale website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "art": "node scripts/generate-art.mjs"
   },
   "dependencies": {
     "next": "^16.4.4",

@@ -1,0 +1,59 @@
+{
+  "id": "pineapples",
+  "names": {
+    "en": "Pineapples",
+    "de": "Ananas",
+    "fr": "Ananas",
+    "it": "Ananas",
+    "es": "Piñas"
+  },
+  "description": {
+    "en": "Aromatic pineapples selected for crown quality, sugar-acid balance and transport tolerance. Packed by count and crown grade for retail and catering.",
+    "de": "Aromatische Ananas, ausgewählt nach Kronenqualität, Zucker-Säure-Verhältnis und Transportfähigkeit. Verpackt nach Stückzahl und Kronengrösse für Detailhandel und Gastronomie.",
+    "fr": "Des ananas parfumés sélectionnés pour la qualité de la couronne, l'équilibre sucre-acidité et la tenue au transport. Conditionnés au calibre et à la couronne pour le détail et la restauration.",
+    "it": "Ananas profumati, selezionati per qualità della corona, equilibrio zuccheri-acidi e resistenza al trasporto. Confezionati a numero e per calibro della corona per distribuzione e ristorazione.",
+    "es": "Piñas aromáticas seleccionadas por la calidad de la corona, el equilibrio azúcar-acidez y la resistencia al transporte. Envasadas por número y calibre de corona para minoristas y restauración."
+  },
+  "image": "/art/pineapples.svg",
+  "products": [
+    {
+      "slug": "smooth-cayenne",
+      "name": { "en": "Smooth Cayenne pineapple", "de": "Smooth-Cayenne-Ananas", "fr": "Ananas Smooth Cayenne", "it": "Ananas Smooth Cayenne", "es": "Piña Smooth Cayenne" },
+      "note": {
+        "en": "A classic canning and fresh-market variety with golden flesh and a pronounced aroma. Robust enough for long-haul logistics.",
+        "de": "Eine klassische Sorte für Konserven und Frischmarkt mit goldgelbem Fruchtfleisch und ausgeprägtem Aroma. Robust genug für lange Transportwege.",
+        "fr": "Une variété classique de conserve et de marché frais, à chair dorée et arôme marqué. Suffisamment robuste pour la logistique longue distance.",
+        "it": "Una varietà classica per conserve e mercato fresco, con polpa dorata e aroma deciso. Abbastanza robusta per la logistica a lunga distanza.",
+        "es": "Una variedad clásica para conserva y mercado fresco, de pulpa dorada y aroma intenso. Lo bastante robusta para la logística de larga distancia."
+      },
+      "image": "/art/pineapples-smooth-cayenne.svg",
+      "regions": ["latin-america", "west-africa"]
+    },
+    {
+      "slug": "md2",
+      "name": { "en": "MD2 pineapple", "de": "MD2-Ananas", "fr": "Ananas MD2", "it": "Ananas MD2", "es": "Piña MD2" },
+      "note": {
+        "en": "The retail standard: consistent golden colour, high sugar and a small core. Available in snack and family formats.",
+        "de": "Der Detailhandelsstandard: gleichmässige goldene Farbe, hoher Zuckergehalt und ein kleiner Strunk. Erhältlich in Snack- und Familienformaten.",
+        "fr": "La référence du détail : couleur dorée régulière, forte teneur en sucre et petit cœur. Disponible en formats snacking et familial.",
+        "it": "Lo standard della distribuzione: colore dorato uniforme, alto contenuto di zucchero e cuore piccolo. Disponibile in formati snack e famiglia.",
+        "es": "El estándar minorista: color dorado uniforme, alto contenido de azúcar y corazón pequeño. Disponible en formatos snack y familiar."
+      },
+      "image": "/art/pineapples-md2.svg",
+      "regions": ["latin-america", "southeast-asia", "west-africa"]
+    },
+    {
+      "slug": "queen",
+      "name": { "en": "Queen pineapple", "de": "Queen-Ananas", "fr": "Ananas Queen", "it": "Ananas Queen", "es": "Piña Queen" },
+      "note": {
+        "en": "A compact, exceptionally sweet fruit with dense flesh. Ideal for premium retail and dessert menus.",
+        "de": "Eine kompakte, besonders süsse Frucht mit dichtem Fruchtfleisch. Ideal für den Premium-Detailhandel und Dessertkarten.",
+        "fr": "Un fruit compact et particulièrement sucré, à chair dense. Idéal pour le détail premium et les cartes de desserts.",
+        "it": "Un frutto compatto e particolarmente dolce, con polpa compatta. Ideale per la distribuzione premium e i dessert.",
+        "es": "Una fruta compacta y especialmente dulce, de pulpa densa. Ideal para el comercio minorista premium y las cartas de postres."
+      },
+      "image": "/art/pineapples-queen.svg",
+      "regions": ["southeast-asia", "latin-america"]
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
-import type { RefCallback } from "react";
+import type { CSSProperties, ReactNode, RefCallback } from "react";
 
 type RevealTag = "h1" | "h2" | "h3" | "h4" | "p" | "span";
 
@@ -142,6 +142,104 @@ export function MaskedText({
           ))}
         </span>
       )}
+    </TagName>
+  );
+}
+
+type RevealElement =
+  | "div"
+  | "p"
+  | "span"
+  | "ul"
+  | "li"
+  | "figure"
+  | "article";
+
+/**
+ * Reveals an element once it enters the viewport. The element is only hidden
+ * after hydration, so content remains visible without JavaScript.
+ */
+export function Reveal({
+  as: Tag = "div",
+  children,
+  className,
+  delay = 0,
+}: {
+  as?: RevealElement;
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const rootRef = useRef<HTMLElement>(null);
+  const [state, setState] = useState<"idle" | "armed" | "visible">("idle");
+
+  useLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setState("visible");
+      return;
+    }
+    setState("armed");
+  }, []);
+
+  useEffect(() => {
+    if (state !== "armed") return;
+    const node = rootRef.current;
+    if (!node) return;
+
+    let frame = 0;
+    let done = false;
+    let observer: IntersectionObserver | undefined;
+    const reveal = () => {
+      if (done) return;
+      done = true;
+      setState("visible");
+    };
+    const cleanup = () => {
+      observer?.disconnect();
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      if (frame) cancelAnimationFrame(frame);
+    };
+    const check = () => {
+      frame = 0;
+      const bounds = node.getBoundingClientRect();
+      if (bounds.top < window.innerHeight * 0.94 && bounds.bottom > 0) reveal();
+    };
+    function schedule() {
+      if (!frame) frame = requestAnimationFrame(check);
+    }
+
+    if ("IntersectionObserver" in window) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) reveal();
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+      );
+      observer.observe(node);
+    }
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    check();
+    return cleanup;
+  }, [state]);
+
+  const TagName = Tag;
+  const setRootRef: RefCallback<HTMLElement> = (element) => {
+    rootRef.current = element;
+  };
+  return (
+    <TagName
+      ref={setRootRef}
+      className={`reveal${className ? ` ${className}` : ""}`}
+      data-reveal={state === "idle" ? undefined : state}
+      style={
+        delay
+          ? ({ "--reveal-delay": `${delay}ms` } as CSSProperties)
+          : undefined
+      }
+    >
+      {children}
     </TagName>
   );
 }

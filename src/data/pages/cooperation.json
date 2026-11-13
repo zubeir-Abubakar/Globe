@@ -1,0 +1,57 @@
+{
+  "id": "cooperation",
+  "path": "cooperation",
+  "image": "/art/news-2.svg",
+  "title": {
+    "en": "Partnerships that start with a specification.",
+    "de": "Partnerschaften beginnen mit einer Spezifikation.",
+    "fr": "Des partenariats qui commencent par une spécification.",
+    "it": "Partnership che iniziano da una specifica.",
+    "es": "Colaboraciones que empiezan con una especificación."
+  },
+  "intro": {
+    "en": "The most useful first conversation is specific. Tell us the product, the pack, the volume window and the destination, and we can tell you honestly whether it is a good fit.",
+    "de": "Das nützlichste erste Gespräch ist konkret. Nennen Sie Produkt, Verpackung, Mengenfenster und Bestimmungsort – dann sagen wir Ihnen ehrlich, ob es passt.",
+    "fr": "La première conversation la plus utile est concrète. Indiquez le produit, l'emballage, la fenêtre de volume et la destination : nous vous dirons honnêtement si cela peut fonctionner.",
+    "it": "La prima conversazione più utile è concreta. Indicate prodotto, imballaggio, finestra di volume e destinazione: vi diremo onestamente se è la soluzione giusta.",
+    "es": "La primera conversación más útil es concreta. Indíquenos producto, envase, ventana de volumen y destino, y le diremos con honestidad si encaja."
+  },
+  "sections": [
+    {
+      "heading": {
+        "en": "For importers and distributors",
+        "de": "Für Importeure und Grosshändler",
+        "fr": "Pour les importateurs et grossistes",
+        "it": "Per importatori e grossisti",
+        "es": "Para importadores y distribuidores"
+      },
+      "body": [
+        {
+          "en": "We support retail programmes, food-service supply and mixed wholesale assortments. Enquiries can include a category brief, target specification and delivery window; attachments such as a pack brief are welcome.",
+          "de": "Wir unterstützen Detailhandelsprogramme, Gastronomieversorgung und gemischte Grosshandelssortimente. Anfragen können eine Kategoriebeschreibung, Zielvorgaben und ein Lieferfenster enthalten; Anhänge wie ein Verpackungsbriefing sind willkommen.",
+          "fr": "Nous accompagnons les programmes de détail, l'approvisionnement de la restauration et les assortiments de gros mixtes. Une demande peut inclure un brief catégorie, une spécification cible et une fenêtre de livraison ; les pièces jointes type brief d'emballage sont bienvenues.",
+          "it": "Supportiamo programmi della distribuzione, forniture alla ristorazione e assortimenti misti all'ingrosso. Le richieste possono includere un brief di categoria, una specifica obiettivo e una finestra di consegna; gli allegati come un brief di imballaggio sono benvenuti.",
+          "es": "Apoyamos programas minoristas, suministro a restauración y surtidos mayoristas mixtos. Las consultas pueden incluir un briefing de categoría, una especificación objetivo y una ventana de entrega; los adjuntos como un briefing de envase son bienvenidos."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "For growers and exporters",
+        "de": "Für Produzenten und Exporteure",
+        "fr": "Pour les producteurs et exportateurs",
+        "it": "Per produttori ed esportatori",
+        "es": "Para productores y exportadores"
+      },
+      "body": [
+        {
+          "en": "Send your product range, origin, pack formats and the documents you can share. We review offers against current buyer specifications and reply with a clear yes, no, or a request for the missing detail.",
+          "de": "Senden Sie uns Sortiment, Herkunft, Verpackungsformate und die Dokumente, die Sie teilen können. Wir prüfen Angebote gegen aktuelle Käuferspezifikationen und antworten mit einem klaren Ja, Nein oder einer Nachfrage zu fehlenden Angaben.",
+          "fr": "Envoyez votre gamme, origine, formats d'emballage et documents disponibles. Nous examinons les offres au regard des spécifications acheteurs en cours et répondons par un oui, un non, ou une demande de précision.",
+          "it": "Inviate gamma, origine, formati di imballaggio e documenti condivisibili. Valutiamo le offerte rispetto alle specifiche degli acquirenti e rispondiamo con un sì, un no o una richiesta di dettagli mancanti.",
+          "es": "Envíe su gama, origen, formatos de envase y los documentos que pueda compartir. Revisamos las ofertas frente a las especificaciones vigentes de los compradores y respondemos con un sí, un no o una petición del detalle que falte."
+        }
+      ]
+    }
+  ]
+}

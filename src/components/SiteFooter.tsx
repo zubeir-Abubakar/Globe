@@ -1,65 +1,110 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Locale } from "@/lib/content";
+import { FooterLanguage } from "@/components/FooterLanguage";
+import {
+  categories,
+  localizedCategoryName,
+  type Locale,
+} from "@/lib/content";
 import { t } from "@/lib/i18n";
-
-const footerLinks = [
-  ["company", "company"],
-  ["quality", "quality"],
-  ["sustainability", "sustainability"],
-  ["news", "news"],
-  ["careers", "careers"],
-  ["contact", "contact"],
-] as const;
+import { site } from "@/lib/site";
 
 export function SiteFooter({ locale }: { locale: Locale }) {
+  const year = new Date().getFullYear();
+  const productLinks = [
+    { href: `/${locale}/products`, label: t(locale, "products") },
+    ...categories.slice(0, 4).map((category) => ({
+      href: `/${locale}/products/${category.id}`,
+      label: localizedCategoryName(category, locale),
+    })),
+  ];
+  const companyLinks = [
+    { href: `/${locale}/company`, label: t(locale, "company") },
+    { href: `/${locale}/quality`, label: t(locale, "quality") },
+    { href: `/${locale}/sustainability`, label: t(locale, "sustainability") },
+    { href: `/${locale}/cooperation`, label: t(locale, "cooperationEnquiry") },
+    { href: `/${locale}/careers`, label: t(locale, "careers") },
+  ];
+  const resourceLinks = [
+    { href: `/${locale}/news`, label: t(locale, "news") },
+    { href: `/${locale}/contact`, label: t(locale, "contact") },
+    { href: `/${locale}/legal`, label: t(locale, "legal") },
+    { href: `/${locale}/privacy`, label: t(locale, "privacyPolicy") },
+  ];
+
   return (
     <footer className="site-footer">
-      <div className="container">
-        <div className="footer-top">
-          <div className="footer-brand">
-            <Link href={`/${locale}`} aria-label="PPO Services AG">
-              <Image
-                src="/ppo/_assets/1a1c4462d009da437855101cc7ff64ea/Images/ppo-logo.svg"
-                alt="PPO Services AG"
-                width={200}
-                height={65}
-              />
-            </Link>
-            <p>
-              {{
-                de: "Früchte- und Gemüsehandel mit Schweizer Wurzeln und internationalen Produzentenbeziehungen.",
-                en: "Fresh produce trading with Swiss roots and long-standing international producer relationships.",
-                fr: "Commerce de fruits et légumes, ancré en Suisse et porté par des relations durables avec les producteurs.",
-                it: "Commercio di frutta e verdura con radici svizzere e relazioni di lunga data con i produttori.",
-                es: "Comercio de frutas y hortalizas con raíces suizas y relaciones duraderas con productores internacionales.",
-              }[locale]}
-            </p>
-          </div>
-          <nav className="footer-links" aria-label={t(locale, "siteNavigation")}>
-            {footerLinks.map(([route, key]) => (
-              <Link href={`/${locale}/${route}`} key={route}>
-                {t(locale, key)}
+      <div className="container footer-main">
+        <div className="footer-brand">
+          <Link href={`/${locale}`} aria-label={site.name}>
+            <Image
+              src="/brand/logo-horizontal-inverse.svg"
+              alt=""
+              width={630}
+              height={160}
+              unoptimized
+            />
+          </Link>
+          <p>{t(locale, "footerTagline")}</p>
+          <p className="footer-demo">{t(locale, "demonstrationNotice")}</p>
+          <FooterLanguage locale={locale} />
+        </div>
+
+        <nav className="footer-nav" aria-label={t(locale, "siteNavigation")}>
+          <div>
+            <h2>{t(locale, "products")}</h2>
+            {productLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
               </Link>
             ))}
-            <Link href={`/${locale}/legal`}>{t(locale, "legal")}</Link>
-            <Link href={`/${locale}/privacy`}>{t(locale, "privacyPolicy")}</Link>
-            <a href="https://www.instagram.com/pposervicesag/" target="_blank" rel="noreferrer">
-              {t(locale, "instagram")}
+          </div>
+          <div>
+            <h2>{t(locale, "company")}</h2>
+            {companyLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div>
+            <h2>{t(locale, "footerResources")}</h2>
+            {resourceLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className="footer-contact">
+            <h2>{t(locale, "footerContact")}</h2>
+            <a href={`mailto:${site.displayEmail}`}>{site.displayEmail}</a>
+            <a href={`tel:${site.displayPhone.replace(/[^+\d]/g, "")}`}>
+              {site.displayPhone}
             </a>
-            <a href="https://www.tiktok.com/@helfergland" target="_blank" rel="noreferrer">
-              {t(locale, "tiktok")}
-            </a>
-          </nav>
-        </div>
-        <div className="footer-bottom">
-          <span>© PPO Services AG</span>
-          <span>
-            Herrenmattstrasse 2 · CH-4658 Däniken ·{" "}
-            <a href="tel:+41622075454">+41 62 207 54 54</a> ·{" "}
-            <a href="mailto:info@ppo.ch">info@ppo.ch</a>
-          </span>
-        </div>
+            <address>{site.address || t(locale, "addressPlaceholder")}</address>
+            {(site.social.linkedin || site.social.instagram) && (
+              <div className="footer-social">
+                {site.social.linkedin && (
+                  <a href={site.social.linkedin} target="_blank" rel="noreferrer">
+                    {t(locale, "linkedin")} ↗
+                  </a>
+                )}
+                {site.social.instagram && (
+                  <a href={site.social.instagram} target="_blank" rel="noreferrer">
+                    {t(locale, "instagram")} ↗
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+        </nav>
+      </div>
+
+      <div className="container footer-bottom">
+        <span>
+          © {year} {site.name}. {t(locale, "rightsReserved")}
+        </span>
+        <a href="#main-content">{t(locale, "backToTop")} ↑</a>
       </div>
     </footer>
   );

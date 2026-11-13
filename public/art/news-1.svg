@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img">
+  <defs>
+    <linearGradient id="bg-news1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5ece0"/>
+      <stop offset="1" stop-color="#ecdccb"/>
+    </linearGradient>
+    <radialGradient id="g-news1" cx="70%" cy="10%" r="80%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="c-news1"><rect width="1200" height="900"/></clipPath>
+  </defs>
+  <g clip-path="url(#c-news1)">
+    <rect width="1200" height="900" fill="url(#bg-news1)"/>
+    <rect width="1200" height="900" fill="url(#g-news1)"/>
+    <g transform="translate(600 450)"><g>
+      <rect x="-250" y="-150" width="500" height="320" rx="20" fill="#14352a"/>
+      <g stroke="#c08a3e" stroke-width="3" opacity="0.85" fill="none">
+        <path d="M-200-90h400M-200-30h400M-200 30h400M-200 90h400"/>
+      </g>
+      <circle cx="180" cy="70" r="82" fill="#e08a33"/>
+      <circle cx="40" cy="86" r="58" fill="#a9c46a"/>
+      <path d="M-200 130Q0 40 200 130" stroke="#faf7ef" stroke-width="5" fill="none"/>
+    </g></g>
+  </g>
+</svg>

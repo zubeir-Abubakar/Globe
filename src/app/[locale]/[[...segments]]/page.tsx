@@ -1,153 +1,159 @@
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import {
-  articleSlug,
-  CareerPage,
   ContactPage,
-  HomePage,
+  EditorialPage,
   NewsDetailPage,
   NewsPage,
-  OfficialContentPage,
   ProductPage,
   ProductsPage,
-  TeamPage,
 } from "@/components/ContentPages";
+import { HomePage } from "@/components/HomePage";
 import { SiteShell } from "@/components/SiteShell";
 import {
-  canonicalPagePath,
-  categoryFromSourcePath,
+  categories,
+  categoryById,
   isLocale,
+  localizedCategoryName,
   localizedProductName,
-  newsSlugAliases,
-  pageFromSourcePath,
-  pageRouteAliases,
-  ppo,
+  locales,
+  news,
+  newsBySlug,
+  pageByPath,
+  pages,
   productBySlug,
-  sourcePage,
   type Locale,
 } from "@/lib/content";
 import { t } from "@/lib/i18n";
 
-type RouteParams = {
-  locale: string;
-  segments?: string[];
-};
+type RouteParams = { locale: string; segments?: string[] };
 type PageProps = {
   params: Promise<RouteParams>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-function queryString(params: Record<string, string | string[] | undefined>) {
-  const search = new URLSearchParams();
-  for (const [key, value] of Object.entries(params)) {
-    if (typeof value === "string") search.set(key, value);
-    else if (Array.isArray(value)) {
-      for (const item of value) search.append(key, item);
-    }
-  }
-  return search;
-}
+const ogLocales: Record<Locale, string> = {
+  en: "en_GB",
+  de: "de_DE",
+  fr: "fr_FR",
+  it: "it_IT",
+  es: "es_ES",
+};
 
-function storyFromLocalizedPath(
-  locale: Locale,
-  path: string,
-  search: URLSearchParams,
-) {
-  return ppo.news.find((story) => {
-    const localized = story.localizedPaths?.[locale];
-    if (!localized) return false;
-    const sourceUrl = new URL(localized, "https://www.ppo.ch");
-    if (
-      sourceUrl.pathname !== path &&
-      sourceUrl.pathname !== `/${locale}${path}`
-    ) return false;
-    const sourceId = sourceUrl.searchParams.get("tx_news_pi1[news]");
-    return !sourceId || sourceId === search.get("tx_news_pi1[news]");
-  });
-}
+const ogImage = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: "Globe Harvest — premium fresh produce import and export",
+};
 
-function sourceRedirect(
-  locale: Locale,
-  path: string,
-  search: URLSearchParams,
-) {
-  for (const [source, target] of Object.entries(ppo.sourceRoutes)) {
-    const sourceUrl = new URL(source, "https://www.ppo.ch");
-    if (
-      sourceUrl.pathname !== path &&
-      sourceUrl.pathname !== `/${locale}${path}`
-    ) continue;
-    const sourceId = sourceUrl.searchParams.get("tx_news_pi1[news]");
-    if (sourceId && sourceId !== search.get("tx_news_pi1[news]")) continue;
-    if (!sourceId && sourceUrl.search && sourceUrl.search !== `?${search.toString()}`) {
-      continue;
-    }
-    const localizedTarget = target.replace(/^\/(?:de|en|fr|it|es)(?=\/|$)/, `/${locale}`);
-    return localizedTarget;
-  }
-}
-
-function safeTitle(locale: Locale, segments: string[]) {
-  if (!segments.length) return "PPO Services AG";
-  if (segments[0] === "products") return t(locale, "products");
-  if (segments[0] === "news") return t(locale, "news");
-  if (segments[0] === "team") return t(locale, "team");
-  const page = sourcePage(segments.at(-1) ?? "");
-  if (!page) return "PPO Services AG";
-  if (locale === "de") return page.name;
-  return page.translations?.[locale]?.title ?? t(locale, "contentUnavailableTitle");
-}
-
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  const { locale: localeParam, segments = [] } = await params;
-  if (!isLocale(localeParam)) return {};
-  const locale = localeParam;
-  const story = segments[0] === "news" && segments[1]
-    ? ppo.news.find((item) => newsSlugAliases(item).has(segments[1]))
-    : undefined;
-  const productCategory =
-    segments[0] === "products"
-      ? ppo.categories.find((category) => category.id === segments[1])
-      : undefined;
-  const product =
-    productCategory && segments[2]
-      ? productBySlug(productCategory, segments[2])
-      : undefined;
-  const title = product
-    ? localizedProductName(product, locale)
-    : story
-      ? story.translations?.[locale]?.title ??
-        t(locale, "contentUnavailableTitle")
-      : safeTitle(locale, segments);
+function alternates(locale: Locale, path: string) {
+  const suffix = path ? `/${path}` : "";
   return {
-    title,
-    description: t(locale, "siteDescription"),
-    openGraph: { locale: `${locale}_CH` },
-    alternates: {
-      canonical: `/${locale}${segments.length ? `/${segments.join("/")}` : ""}`,
-    },
+    canonical: `/${locale}${suffix}`,
+    languages: Object.fromEntries(
+      locales.map((code) => [code, `/${code}${suffix}`]),
+    ),
   };
 }
 
-export default async function LocalizedPage({
-  params,
-  searchParams,
-}: PageProps) {
+function routeMetadata(locale: Locale, segments: string[]): Metadata {
+  const siteDescription = t(locale, "heroCopy");
+
+  if (!segments.length) {
+    return {
+      title: {
+        absolute: "Globe Harvest — Premium Fresh Produce Import & Export",
+      },
+      description: siteDescription,
+      alternates: alternates(locale, ""),
+      openGraph: {
+        locale: ogLocales[locale],
+        url: `/${locale}`,
+        title: "Globe Harvest — Premium Fresh Produce Import & Export",
+        description: siteDescription,
+        images: [ogImage],
+      },
+    };
+  }
+
+  if (segments[0] === "products") {
+    const category = segments[1] ? categoryById(segments[1]) : undefined;
+    const product = category && segments[2] ? productBySlug(category, segments[2]) : undefined;
+    if (product) {
+      return {
+        title: localizedProductName(product, locale),
+        description: product.note[locale],
+        alternates: alternates(locale, `products/${category!.id}/${product.slug}`),
+        openGraph: { locale: ogLocales[locale], type: "article", images: [ogImage] },
+      };
+    }
+    if (category) {
+      return {
+        title: localizedCategoryName(category, locale),
+        description: category.description[locale],
+        alternates: alternates(locale, `products/${category.id}`),
+        openGraph: { locale: ogLocales[locale], images: [ogImage] },
+      };
+    }
+    return {
+      title: t(locale, "products"),
+      description: siteDescription,
+      alternates: alternates(locale, "products"),
+      openGraph: { locale: ogLocales[locale], images: [ogImage] },
+    };
+  }
+
+  if (segments[0] === "news") {
+    const story = segments[1] ? newsBySlug(segments[1]) : undefined;
+    return {
+      title: story ? story.titles[locale] : t(locale, "marketNotes"),
+      description: story ? story.excerpt[locale] : t(locale, "storyCopy"),
+      alternates: alternates(locale, story ? `news/${story.slug}` : "news"),
+      openGraph: {
+        locale: ogLocales[locale],
+        type: story ? "article" : "website",
+        images: [ogImage],
+      },
+    };
+  }
+
+  if (segments.length === 1 && segments[0] === "contact") {
+    return {
+      title: t(locale, "contactHeading"),
+      description: t(locale, "contactIntro"),
+      alternates: alternates(locale, "contact"),
+      openGraph: { locale: ogLocales[locale], images: [ogImage] },
+    };
+  }
+
+  const page = segments.length === 1 ? pageByPath(segments[0]) : undefined;
+  if (page) {
+    return {
+      title: page.title[locale],
+      description: page.intro[locale],
+      alternates: alternates(locale, page.path),
+      openGraph: { locale: ogLocales[locale], type: "article", images: [ogImage] },
+    };
+  }
+
+  return { title: "Globe Harvest" };
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale, segments = [] } = await params;
+  if (!isLocale(locale)) return {};
+  return routeMetadata(locale, segments);
+}
+
+export default async function LocalizedPage({ params, searchParams }: PageProps) {
   const [{ locale: localeParam, segments = [] }, rawSearch] = await Promise.all([
     params,
     searchParams,
   ]);
   if (!isLocale(localeParam)) notFound();
   const locale: Locale = localeParam;
-  const path = `/${segments.join("/")}`;
-  const search = queryString(rawSearch);
-  const legacyTarget = sourceRedirect(locale, path, search);
 
-  if (legacyTarget && legacyTarget !== `/${locale}${path}`) {
-    redirect(legacyTarget);
-  }
   if (!segments.length) {
     return (
       <SiteShell locale={locale}>
@@ -158,20 +164,29 @@ export default async function LocalizedPage({
 
   if (segments[0] === "products") {
     if (segments.length === 1) {
-      return <SiteShell locale={locale}><ProductsPage locale={locale} /></SiteShell>;
+      return (
+        <SiteShell locale={locale}>
+          <ProductsPage locale={locale} />
+        </SiteShell>
+      );
     }
-    const category =
-      ppo.categories.find((item) => item.id === segments[1]) ??
-      categoryFromSourcePath(path) ??
-      categoryFromSourcePath(`/${locale}${path}`);
+    const category = categoryById(segments[1]);
     if (!category) notFound();
     if (segments.length === 2) {
-      return <SiteShell locale={locale}><ProductsPage locale={locale} category={category} /></SiteShell>;
+      return (
+        <SiteShell locale={locale}>
+          <ProductsPage locale={locale} category={category} />
+        </SiteShell>
+      );
     }
     if (segments.length === 3) {
       const product = productBySlug(category, segments[2]);
       if (product) {
-        return <SiteShell locale={locale}><ProductPage locale={locale} category={category} product={product} /></SiteShell>;
+        return (
+          <SiteShell locale={locale}>
+            <ProductPage locale={locale} category={category} product={product} />
+          </SiteShell>
+        );
       }
     }
     notFound();
@@ -179,43 +194,32 @@ export default async function LocalizedPage({
 
   if (segments[0] === "news") {
     if (segments.length === 1) {
-      return <SiteShell locale={locale}><NewsPage locale={locale} /></SiteShell>;
+      return (
+        <SiteShell locale={locale}>
+          <NewsPage locale={locale} />
+        </SiteShell>
+      );
     }
     if (segments.length === 2) {
-      const story =
-        ppo.news.find((item) => newsSlugAliases(item).has(segments[1])) ??
-        storyFromLocalizedPath(locale, path, search);
+      const story = newsBySlug(segments[1]);
       if (story) {
-        return <SiteShell locale={locale}><NewsDetailPage locale={locale} story={story} /></SiteShell>;
-      }
-    }
-    const legacyStory = storyFromLocalizedPath(locale, path, search);
-    if (legacyStory) {
-      redirect(`/${locale}/news/${articleSlug(legacyStory)}`);
-    }
-    notFound();
-  }
-
-  if (segments[0] === "team") {
-    if (segments.length === 1) {
-      return <SiteShell locale={locale}><TeamPage locale={locale} /></SiteShell>;
-    }
-    if (segments.length === 2) {
-      const group = ppo.peopleGroups.find((item) => item.id === segments[1]);
-      if (group) {
-        return <SiteShell locale={locale}><TeamPage locale={locale} group={group} /></SiteShell>;
+        return (
+          <SiteShell locale={locale}>
+            <NewsDetailPage locale={locale} story={story} />
+          </SiteShell>
+        );
       }
     }
     notFound();
   }
 
-  if (segments.length === 1 && segments[0] === "careers") {
-    return <SiteShell locale={locale}><CareerPage locale={locale} /></SiteShell>;
-  }
   if (segments.length === 1 && segments[0] === "contact") {
-    const initialProduct = typeof rawSearch.product === "string" ? rawSearch.product : "";
+    const initialProduct =
+      typeof rawSearch.product === "string" ? rawSearch.product : "";
     const initialEnquiry =
-      rawSearch.enquiry === "specifications" ? "Product specifications request" : "";
+      rawSearch.enquiry === "specifications"
+        ? "Product specification request"
+        : "";
     return (
       <SiteShell locale={locale}>
         <ContactPage
@@ -227,22 +231,34 @@ export default async function LocalizedPage({
     );
   }
 
-  const targetPagePath = `/${locale}/${segments.join("/")}`;
-  const page =
-    ppo.pages.find((item) => pageRouteAliases(item).has(segments.join("/"))) ??
-    pageFromSourcePath(path) ??
-    pageFromSourcePath(`/${locale}${path}`) ??
-    ppo.pages.find((item) => item.localizedPaths[locale] === targetPagePath);
-
-  if (page) {
-    const canonical = `/${locale}/${canonicalPagePath(page.id)}`;
-    if (canonical !== targetPagePath) redirect(canonical);
-    return (
-      <SiteShell locale={locale}>
-        <OfficialContentPage page={page} locale={locale} />
-      </SiteShell>
-    );
+  if (segments.length === 1) {
+    const page = pages.find((item) => item.path === segments[0]);
+    if (page) {
+      return (
+        <SiteShell locale={locale}>
+          <EditorialPage locale={locale} page={page} />
+        </SiteShell>
+      );
+    }
   }
 
   notFound();
+}
+
+export function generateStaticParams() {
+  const paths: string[][] = [];
+  for (const category of categories) {
+    paths.push(["products", category.id]);
+    for (const product of category.products) {
+      paths.push(["products", category.id, product.slug]);
+    }
+  }
+  for (const story of news) paths.push(["news", story.slug]);
+  paths.push(["products"], ["news"], ["contact"]);
+  for (const page of pages) paths.push([page.path]);
+
+  return locales.flatMap((locale) => [
+    { locale, segments: [] as string[] },
+    ...paths.map((segments) => ({ locale, segments })),
+  ]);
 }

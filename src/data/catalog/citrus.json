@@ -1,0 +1,59 @@
+{
+  "id": "citrus",
+  "names": {
+    "en": "Citrus fruits",
+    "de": "Zitrusfrüchte",
+    "fr": "Agrumes",
+    "it": "Agrumi",
+    "es": "Cítricos"
+  },
+  "description": {
+    "en": "Bright, well-coloured citrus with firm rind and dependable juice content. Programmed by calibre and brix to keep shelves consistent through the season.",
+    "de": "Leuchtende, gut gefärbte Zitrusfrüchte mit fester Schale und verlässlichem Saftgehalt. Nach Kaliber und Brix programmiert, damit das Regal über die Saison konstant bleibt.",
+    "fr": "Des agrumes éclatants et bien colorés, à écorce ferme et teneur en jus fiable. Programmés au calibre et au brix pour une constance en rayon tout au long de la saison.",
+    "it": "Agrumi brillanti e ben colorati, con buccia soda e resa in succo affidabile. Programmati a calibro e brix per una presenza costante sullo scaffale durante la stagione.",
+    "es": "Cítricos brillantes y bien coloreados, de corteza firme y rendimiento de zumo fiable. Programados por calibre y brix para mantener la constancia en el lineal durante la temporada."
+  },
+  "image": "/art/citrus.svg",
+  "products": [
+    {
+      "slug": "oranges",
+      "name": { "en": "Oranges", "de": "Orangen", "fr": "Oranges", "it": "Arance", "es": "Naranjas" },
+      "note": {
+        "en": "Sweet, easy-peeling oranges for the fruit bowl and juice trade, graded for uniform colour and rind finish.",
+        "de": "Süsse, leicht schälbare Orangen für Obstschale und Saftmarkt, sortiert auf gleichmässige Farbe und saubere Schale.",
+        "fr": "Des oranges douces et faciles à éplucher pour le marché du fruit et du jus, calibrées pour une couleur et une écorce uniformes.",
+        "it": "Arance dolci e facili da sbucciare per il mercato del frutto e del succo, selezionate per colore e buccia uniformi.",
+        "es": "Naranjas dulces y fáciles de pelar para el mercado de fruta y zumo, calibradas por color y corteza uniformes."
+      },
+      "image": "/art/citrus-oranges.svg",
+      "regions": ["southern-europe", "north-africa", "latin-america"]
+    },
+    {
+      "slug": "lemons",
+      "name": { "en": "Lemons", "de": "Zitronen", "fr": "Citrons", "it": "Limoni", "es": "Limones" },
+      "note": {
+        "en": "Thin-skinned, high-juice lemons with a clean, aromatic zest. Packed for retail punnets and catering cases.",
+        "de": "Dünnschalige, saftreiche Zitronen mit sauberer, aromatischer Schale. Verpackt in Detailhandels-Schalen und Gastronomie-Kisten.",
+        "fr": "Des citrons à peau fine et très juteux, au zeste net et aromatique. Conditionnés en barquettes de détail et caisses de restauration.",
+        "it": "Limoni dalla buccia sottile e molto succosi, con scorza pulita e aromatica. Confezionati in vaschette per la distribuzione e cassette per la ristorazione.",
+        "es": "Limones de piel fina y muy jugosos, con ralladura limpia y aromática. Envasados en bandejas minoristas y cajas de restauración."
+      },
+      "image": "/art/citrus-lemons.svg",
+      "regions": ["southern-europe", "latin-america", "north-africa"]
+    },
+    {
+      "slug": "grapefruit",
+      "name": { "en": "Grapefruit", "de": "Grapefruit", "fr": "Pamplemousses", "it": "Pompelmi", "es": "Pomelos" },
+      "note": {
+        "en": "Firm, heavy grapefruit with a pink blush and a clean bitter-sweet finish. Selected for juice yield and shelf stability.",
+        "de": "Feste, schwere Grapefruit mit rosa Hauch und sauberem bitter-süssem Abgang. Ausgewählt auf Saftausbeute und Regalhaltbarkeit.",
+        "fr": "Des pamplemousses fermes et lourds, à reflet rosé et finale douce-amère nette. Sélectionnés pour leur rendement en jus et leur tenue en rayon.",
+        "it": "Pompelmi sodi e pesanti, con riflesso rosato e finale pulito amaro-dolce. Selezionati per resa in succo e conservabilità sullo scaffale.",
+        "es": "Pomelos firmes y pesados, con un tono rosado y un final limpio agridulce. Seleccionados por rendimiento en zumo y conservación en el lineal."
+      },
+      "image": "/art/citrus-grapefruit.svg",
+      "regions": ["southern-europe", "latin-america"]
+    }
+  ]
+}

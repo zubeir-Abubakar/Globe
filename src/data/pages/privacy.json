@@ -1,0 +1,75 @@
+{
+  "id": "privacy",
+  "path": "privacy",
+  "image": "/art/news-2.svg",
+  "title": {
+    "en": "Privacy notice",
+    "de": "Datenschutzerklärung",
+    "fr": "Politique de confidentialité",
+    "it": "Informativa sulla privacy",
+    "es": "Política de privacidad"
+  },
+  "intro": {
+    "en": "This demonstration website collects only the information you choose to enter in the contact form. It does not use advertising trackers, analytics scripts or third-party marketing cookies.",
+    "de": "Diese Demonstrationswebsite erhebt nur die Angaben, die Sie freiwillig im Kontaktformular eingeben. Sie verwendet keine Werbetracker, Analyse-Skripte oder Marketing-Cookies Dritter.",
+    "fr": "Ce site de démonstration ne collecte que les informations que vous saisissez volontairement dans le formulaire de contact. Il n'utilise ni traceurs publicitaires, ni scripts d'analyse, ni cookies marketing tiers.",
+    "it": "Questo sito dimostrativo raccoglie solo i dati inseriti volontariamente nel modulo di contatto. Non utilizza tracker pubblicitari, script di analisi o cookie di marketing di terze parti.",
+    "es": "Este sitio de demostración solo recopila la información que usted introduce voluntariamente en el formulario de contacto. No utiliza rastreadores publicitarios, scripts de analítica ni cookies de marketing de terceros."
+  },
+  "sections": [
+    {
+      "heading": {
+        "en": "What is collected",
+        "de": "Welche Daten erhoben werden",
+        "fr": "Données collectées",
+        "it": "Dati raccolti",
+        "es": "Datos recopilados"
+      },
+      "body": [
+        {
+          "en": "The contact form asks for your name, company, business email, country, preferred language and message, plus optional telephone, website and product details. Attachments are accepted only when an enquiry type allows them. Data is submitted to the form endpoint configured by the site operator.",
+          "de": "Das Kontaktformular fragt nach Name, Unternehmen, geschäftlicher E-Mail, Land, bevorzugter Sprache und Nachricht sowie optional Telefon, Website und Produktangaben. Anhänge sind nur bei bestimmten Anfragetypen möglich. Die Daten werden an den vom Betreiber konfigurierten Formular-Endpunkt übermittelt.",
+          "fr": "Le formulaire demande nom, entreprise, e-mail professionnel, pays, langue préférée et message, ainsi que téléphone, site web et détails produit facultatifs. Les pièces jointes ne sont acceptées que pour certains types de demande. Les données sont transmises au point de terminaison configuré par l'exploitant.",
+          "it": "Il modulo richiede nome, azienda, e-mail aziendale, paese, lingua preferita e messaggio, oltre a telefono, sito web e dettagli prodotto facoltativi. Gli allegati sono ammessi solo per alcuni tipi di richiesta. I dati vengono inviati all'endpoint configurato dal gestore del sito.",
+          "es": "El formulario solicita nombre, empresa, correo profesional, país, idioma preferido y mensaje, además de teléfono, sitio web y detalles de producto opcionales. Los adjuntos solo se aceptan para determinados tipos de consulta. Los datos se envían al endpoint configurado por el operador del sitio."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "Purpose and retention",
+        "de": "Zweck und Aufbewahrung",
+        "fr": "Finalité et conservation",
+        "it": "Finalità e conservazione",
+        "es": "Finalidad y conservación"
+      },
+      "body": [
+        {
+          "en": "Enquiry data is used solely to answer the enquiry and to manage any resulting business relationship. Retention periods must be defined by the operator in line with local law. This repository does not store submissions in a database of its own.",
+          "de": "Anfragedaten werden ausschliesslich zur Beantwortung der Anfrage und zur Verwaltung einer daraus entstehenden Geschäftsbeziehung verwendet. Aufbewahrungsfristen muss der Betreiber nach lokalem Recht festlegen. Dieses Repository speichert keine Übermittlungen in einer eigenen Datenbank.",
+          "fr": "Les données de demande servent uniquement à répondre à la demande et à gérer la relation commerciale qui en découle. Les durées de conservation doivent être définies par l'exploitant selon le droit local. Ce dépôt ne stocke pas les envois dans sa propre base de données.",
+          "it": "I dati delle richieste sono usati solo per rispondere e per gestire l'eventuale rapporto commerciale. I periodi di conservazione devono essere definiti dal gestore secondo il diritto locale. Questo repository non memorizza gli invii in un proprio database.",
+          "es": "Los datos de las consultas se utilizan únicamente para responderlas y gestionar la relación comercial que pueda derivarse. Los plazos de conservación debe definirlos el operador conforme a la legislación local. Este repositorio no almacena los envíos en una base de datos propia."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "Your rights",
+        "de": "Ihre Rechte",
+        "fr": "Vos droits",
+        "it": "I tuoi diritti",
+        "es": "Sus derechos"
+      },
+      "body": [
+        {
+          "en": "You may request access to, correction of or deletion of the personal data you submitted, and you may object to its processing. Use the contact details configured by the site operator. The operator is responsible for providing a complete legal notice for its jurisdiction.",
+          "de": "Sie können Auskunft, Berichtigung oder Löschung der von Ihnen übermittelten personenbezogenen Daten verlangen und der Verarbeitung widersprechen. Nutzen Sie die vom Betreiber konfigurierten Kontaktdaten. Der Betreiber ist für eine vollständige rechtliche Information nach seiner Rechtsordnung verantwortlich.",
+          "fr": "Vous pouvez demander l'accès, la rectification ou l'effacement des données personnelles transmises et vous opposer à leur traitement. Utilisez les coordonnées configurées par l'exploitant. Celui-ci est responsable de fournir une mention légale complète pour sa juridiction.",
+          "it": "Puoi richiedere accesso, rettifica o cancellazione dei dati personali inviati e opporti al trattamento. Usa i contatti configurati dal gestore. Il gestore è responsabile di fornire un'informativa legale completa per la propria giurisdizione.",
+          "es": "Puede solicitar acceso, rectificación o supresión de los datos personales enviados y oponerse a su tratamiento. Utilice los datos de contacto configurados por el operador. El operador es responsable de facilitar un aviso legal completo para su jurisdicción."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "legal",
+  "path": "legal",
+  "image": "/art/news-1.svg",
+  "title": {
+    "en": "Legal notice",
+    "de": "Rechtliche Hinweise",
+    "fr": "Mentions légales",
+    "it": "Note legali",
+    "es": "Aviso legal"
+  },
+  "intro": {
+    "en": "This website is a demonstration product for a fictional fresh-produce trading company. Company details, product information and editorial content are illustrative and are not offers, quotations or statements about a real business.",
+    "de": "Diese Website ist ein Demonstrationsprodukt für ein fiktives Handelshaus für frische Produkte. Firmenangaben, Produktinformationen und redaktionelle Inhalte sind illustrativ und stellen keine Angebote, Offerten oder Aussagen über ein reales Unternehmen dar.",
+    "fr": "Ce site est un produit de démonstration destiné à une maison de négoce fictive de produits frais. Les coordonnées, informations produit et contenus éditoriaux sont illustratifs et ne constituent ni offres, ni devis, ni déclarations sur une entreprise réelle.",
+    "it": "Questo sito è un prodotto dimostrativo per una casa commerciale fittizia di prodotti freschi. Dati aziendali, informazioni sui prodotti e contenuti editoriali sono illustrativi e non costituiscono offerte, preventivi o dichiarazioni su un'impresa reale.",
+    "es": "Este sitio es un producto de demostración para una casa comercial ficticia de producto fresco. Los datos de la empresa, la información de producto y los contenidos editoriales son ilustrativos y no constituyen ofertas, presupuestos ni declaraciones sobre una empresa real."
+  },
+  "sections": [
+    {
+      "heading": {
+        "en": "Publisher details",
+        "de": "Angaben zum Anbieter",
+        "fr": "Informations sur l'éditeur",
+        "it": "Dati del gestore",
+        "es": "Datos del titular"
+      },
+      "body": [
+        {
+          "en": "The operator of a live deployment must add its own company name, registered address, commercial register number and contact details. Until those values are configured, the contact details shown on this site are neutral placeholders.",
+          "de": "Der Betreiber einer Live-Umgebung muss eigenen Firmennamen, Sitz, Handelsregisternummer und Kontaktdaten ergänzen. Bis diese Werte konfiguriert sind, sind die auf dieser Website angezeigten Kontaktdaten neutrale Platzhalter.",
+          "fr": "L'exploitant d'une mise en ligne doit ajouter sa raison sociale, son siège, son numéro de registre du commerce et ses coordonnées. Tant que ces valeurs ne sont pas configurées, les coordonnées affichées sont des placeholders neutres.",
+          "it": "Il gestore di un'installazione live deve aggiungere ragione sociale, sede, numero di registro commerciale e contatti. Finché questi valori non sono configurati, i contatti mostrati sul sito sono segnaposto neutri.",
+          "es": "El operador de una implantación real debe añadir su razón social, domicilio, número de registro mercantil y datos de contacto. Mientras no se configuren, los datos mostrados en el sitio son marcadores de posición neutros."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "Content and liability",
+        "de": "Inhalte und Haftung",
+        "fr": "Contenus et responsabilité",
+        "it": "Contenuti e responsabilità",
+        "es": "Contenidos y responsabilidad"
+      },
+      "body": [
+        {
+          "en": "All artwork and written content in this repository are original to the project unless a separate attribution is provided. External links are the responsibility of their operators. No warranty is given that demonstration content is accurate for commercial use.",
+          "de": "Alle Bild- und Textinhalte dieses Repositories sind, soweit keine separate Quellenangabe erfolgt, Eigenproduktionen des Projekts. Für externe Links sind deren Betreiber verantwortlich. Für die kommerzielle Richtigkeit der Demonstrationsinhalte wird keine Gewähr übernommen.",
+          "fr": "L'ensemble des visuels et textes de ce dépôt est original, sauf mention d'attribution distincte. Les liens externes relèvent de la responsabilité de leurs exploitants. Aucune garantie n'est donnée quant à l'exactitude commerciale des contenus de démonstration.",
+          "it": "Tutti i contenuti visivi e testuali di questo repository sono originali del progetto, salvo diversa attribuzione. I link esterni sono responsabilità dei rispettivi gestori. Non si fornisce alcuna garanzia sull'accuratezza commerciale dei contenuti dimostrativi.",
+          "es": "Todos los contenidos visuales y de texto de este repositorio son originales del proyecto, salvo atribución separada. Los enlaces externos son responsabilidad de sus operadores. No se ofrece garantía sobre la exactitud comercial de los contenidos de demostración."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "Trademarks",
+        "de": "Marken",
+        "fr": "Marques",
+        "it": "Marchi",
+        "es": "Marcas"
+      },
+      "body": [
+        {
+          "en": "“Globe Harvest” and the Globe Harvest emblem are original marks created for this demonstration project. Any similarity to an existing company is coincidental. Buyers should conduct their own name and trademark checks before launch.",
+          "de": "„Globe Harvest“ und das Globe-Harvest-Zeichen sind Originalmarken dieses Demonstrationsprojekts. Ähnlichkeiten mit bestehenden Unternehmen sind zufällig. Käufer sollten vor dem Start eigene Namens- und Markenprüfungen durchführen.",
+          "fr": "« Globe Harvest » et son emblème sont des marques originales créées pour ce projet de démonstration. Toute ressemblance avec une entreprise existante serait fortuite. Les acheteurs doivent effectuer leurs propres vérifications de nom et de marque avant le lancement.",
+          "it": "«Globe Harvest» e l'emblema Globe Harvest sono marchi originali creati per questo progetto dimostrativo. Eventuali somiglianze con imprese esistenti sono casuali. Gli acquirenti devono svolgere proprie verifiche su nome e marchio prima del lancio.",
+          "es": "«Globe Harvest» y su emblema son marcas originales creadas para este proyecto de demostración. Cualquier parecido con una empresa existente es casual. Los compradores deben realizar sus propias comprobaciones de nombre y marca antes del lanzamiento."
+        }
+      ]
+    }
+  ]
+}

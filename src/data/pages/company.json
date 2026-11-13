@@ -1,0 +1,75 @@
+{
+  "id": "company",
+  "path": "company",
+  "image": "/art/orchard.svg",
+  "title": {
+    "en": "Fresh produce, handled with intent.",
+    "de": "Frische Ware, mit klarer Haltung.",
+    "fr": "Des produits frais, traités avec méthode.",
+    "it": "Prodotti freschi, gestiti con metodo.",
+    "es": "Producto fresco, gestionado con criterio."
+  },
+  "intro": {
+    "en": "Globe Harvest is an independent fresh-produce trading house. We connect growers, importers and wholesale distributors around a single idea: fruit should arrive in the condition the buyer planned for.",
+    "de": "Globe Harvest ist ein unabhängiges Handelshaus für frische Produkte. Wir verbinden Produzenten, Importeure und Grosshändler mit einem klaren Anspruch: Die Ware soll so ankommen, wie der Käufer sie geplant hat.",
+    "fr": "Globe Harvest est une maison de négoce indépendante spécialisée dans les produits frais. Nous relions producteurs, importateurs et grossistes autour d'une idée simple : le fruit doit arriver dans l'état prévu par l'acheteur.",
+    "it": "Globe Harvest è una casa commerciale indipendente specializzata in prodotti freschi. Colleghiamo produttori, importatori e grossisti attorno a un'idea semplice: la frutta deve arrivare nelle condizioni previste dall'acquirente.",
+    "es": "Globe Harvest es una casa comercial independiente especializada en producto fresco. Conectamos a productores, importadores y mayoristas en torno a una idea sencilla: la fruta debe llegar en las condiciones que el comprador ha previsto."
+  },
+  "sections": [
+    {
+      "heading": {
+        "en": "What we trade",
+        "de": "Unser Sortiment",
+        "fr": "Notre assortiment",
+        "it": "Il nostro assortimento",
+        "es": "Nuestro surtido"
+      },
+      "body": [
+        {
+          "en": "Our catalogue covers avocados, mangoes, pineapples, citrus fruits, bananas, berries, melons, grapes, exotic tropical fruits and fresh vegetables. Every line is described with the detail a buyer needs to frame a precise enquiry.",
+          "de": "Unser Katalog umfasst Avocados, Mangos, Ananas, Zitrusfrüchte, Bananen, Beeren, Melonen, Trauben, exotische Tropenfrüchte und frisches Gemüse. Jede Linie ist so beschrieben, dass Einkäufer eine präzise Anfrage stellen können.",
+          "fr": "Notre catalogue couvre avocats, mangues, ananas, agrumes, bananes, baies, melons, raisins, fruits tropicaux exotiques et légumes frais. Chaque ligne est décrite avec le niveau de détail nécessaire à une demande précise.",
+          "it": "Il nostro catalogo comprende avocado, mango, ananas, agrumi, banane, piccoli frutti, meloni, uva, frutta tropicale esotica e verdure fresche. Ogni linea è descritta con il dettaglio necessario per formulare una richiesta precisa.",
+          "es": "Nuestro catálogo incluye aguacates, mangos, piñas, cítricos, plátanos, frutos rojos, melones, uvas, frutas tropicales exóticas y hortalizas frescas. Cada línea se describe con el detalle necesario para plantear una consulta precisa."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "How we work",
+        "de": "So arbeiten wir",
+        "fr": "Notre façon de travailler",
+        "it": "Come lavoriamo",
+        "es": "Cómo trabajamos"
+      },
+      "body": [
+        {
+          "en": "Commercial conversations stay short; operational detail is precise. Product, grade, packaging, volume window and destination are agreed in writing before a shipment is planned. If a detail cannot be met, we say so early rather than managing the surprise on arrival.",
+          "de": "Kommerzielle Gespräche bleiben kurz, operative Details präzise. Produkt, Güteklasse, Verpackung, Mengenfenster und Bestimmungsort werden schriftlich vereinbart, bevor eine Sendung geplant wird. Was nicht erfüllbar ist, sagen wir früh – nicht erst bei der Ankunft.",
+          "fr": "Les échanges commerciaux restent courts, les détails opérationnels précis. Produit, catégorie, emballage, fenêtre de volume et destination sont convenus par écrit avant toute planification. Ce qui ne peut pas être tenu est dit tôt, plutôt que découvert à l'arrivée.",
+          "it": "Le conversazioni commerciali restano brevi, i dettagli operativi precisi. Prodotto, categoria, imballaggio, finestra di volume e destinazione vengono concordati per iscritto prima di pianificare una spedizione. Ciò che non è realizzabile viene detto subito, non all'arrivo.",
+          "es": "Las conversaciones comerciales son breves; el detalle operativo, preciso. Producto, categoría, envase, ventana de volumen y destino se acuerdan por escrito antes de planificar un envío. Lo que no se puede cumplir se dice pronto, no se descubre a la llegada."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "Buyers, growers and partners",
+        "de": "Käufer, Produzenten und Partner",
+        "fr": "Acheteurs, producteurs et partenaires",
+        "it": "Acquirenti, produttori e partner",
+        "es": "Compradores, productores y socios"
+      },
+      "body": [
+        {
+          "en": "Importers and distributors use Globe Harvest to simplify a multi-origin programme. Growers and exporters use us as a commercial route into European wholesale. Both sides deal with the same short chain of responsibility.",
+          "de": "Importeure und Grosshändler nutzen Globe Harvest, um ein Multi-Origin-Programm zu vereinfachen. Produzenten und Exporteure nutzen uns als kommerziellen Weg in den europäischen Grosshandel. Beide Seiten arbeiten mit derselben kurzen Verantwortungskette.",
+          "fr": "Les importateurs et grossistes utilisent Globe Harvest pour simplifier un programme multi-origines. Les producteurs et exportateurs nous utilisent comme voie commerciale vers le gros européen. Les deux côtés traitent avec la même chaîne courte de responsabilité.",
+          "it": "Importatori e grossisti usano Globe Harvest per semplificare un programma multi-origine. Produttori ed esportatori ci usano come canale commerciale verso l'ingrosso europeo. Entrambe le parti trattano con la stessa catena di responsabilità.",
+          "es": "Importadores y distribuidores utilizan Globe Harvest para simplificar un programa multi-origen. Productores y exportadores nos utilizan como vía comercial hacia el mayorista europeo. Ambas partes tratan con la misma cadena corta de responsabilidad."
+        }
+      ]
+    }
+  ]
+}

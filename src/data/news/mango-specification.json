@@ -1,0 +1,46 @@
+{
+  "slug": "reading-a-mango-specification",
+  "date": "2026-09-18",
+  "image": "/art/news-1.svg",
+  "titles": {
+    "en": "Reading a mango specification properly",
+    "de": "Eine Mango-Spezifikation richtig lesen",
+    "fr": "Bien lire une spécification de mangue",
+    "it": "Leggere correttamente una specifica del mango",
+    "es": "Leer bien una especificación de mango"
+  },
+  "excerpt": {
+    "en": "Variety, brix and colour expression decide more about arrival quality than the calendar week. A short guide for buyers.",
+    "de": "Sorte, Brix und Farbausprägung entscheiden mehr über die Ankunftsqualität als die Kalenderwoche. Eine kurze Orientierung für Einkäufer.",
+    "fr": "Variété, brix et expression de la couleur déterminent davantage la qualité à l'arrivée que la semaine du calendrier. Un repère pour les acheteurs.",
+    "it": "Varietà, brix ed espressione del colore determinano la qualità all'arrivo più della settimana di calendario. Una breve guida per gli acquirenti.",
+    "es": "La variedad, el brix y la expresión del color determinan más la calidad de llegada que la semana del calendario. Una breve guía para compradores."
+  },
+  "body": {
+    "en": [
+      "A mango specification works best when it describes the fruit the buyer wants to sell, not simply the fruit the grower has available. Variety is the first decision because it sets expectations for fibre, flesh colour and shelf behaviour. Kent and Keitt behave differently in a ripening room even when they arrive at the same maturity.",
+      "The second decision is maturity at harvest, expressed through dry matter, brix or flesh colour depending on the programme. Colour on the outside is a useful commercial signal but a poor indicator of eating quality. Buyers who define both an internal and an external standard receive fewer surprises.",
+      "This note is illustrative demonstration content for the Globe Harvest website and does not describe a live commercial programme."
+    ],
+    "de": [
+      "Eine Mango-Spezifikation funktioniert am besten, wenn sie die Frucht beschreibt, die der Käufer verkaufen will – nicht einfach die Frucht, die der Produzent gerade verfügbar hat. Die Sorte ist die erste Entscheidung, weil sie Fasergehalt, Fleischfarbe und Regalverhalten bestimmt. Kent und Keitt verhalten sich im Reiferaum unterschiedlich, auch wenn sie gleich reif ankommen.",
+      "Die zweite Entscheidung ist die Erntreife, ausgedrückt über Trockenmasse, Brix oder Fleischfarbe – je nach Programm. Die äussere Farbe ist ein gutes Handelssignal, aber ein schlechter Indikator für den Essgenuss. Wer innen und aussen definiert, erlebt weniger Überraschungen.",
+      "Dieser Beitrag ist illustrativer Demonstrationsinhalt der Globe-Harvest-Website und beschreibt kein laufendes Handelsprogramm."
+    ],
+    "fr": [
+      "Une spécification de mangue est plus utile lorsqu'elle décrit le fruit que l'acheteur veut vendre, et non simplement celui dont dispose le producteur. La variété est la première décision, car elle fixe les attentes en matière de fibres, de couleur de chair et de tenue. Kent et Keitt ne se comportent pas de la même façon en mûrissage, même à maturité égale.",
+      "La deuxième décision concerne la maturité à la récolte, exprimée par la matière sèche, le brix ou la couleur de chair selon le programme. La couleur externe est un bon signal commercial mais un mauvais indicateur de qualité gustative. Définir un standard interne et externe réduit les surprises.",
+      "Cette note est un contenu de démonstration pour le site Globe Harvest et ne décrit pas un programme commercial réel."
+    ],
+    "it": [
+      "Una specifica del mango funziona meglio quando descrive il frutto che l'acquirente vuole vendere, non semplicemente quello disponibile dal produttore. La varietà è la prima decisione perché determina fibre, colore della polpa e comportamento sullo scaffale. Kent e Keitt si comportano diversamente in cella di maturazione anche con la stessa maturità.",
+      "La seconda decisione è la maturità alla raccolta, espressa in sostanza secca, brix o colore della polpa secondo il programma. Il colore esterno è un buon segnale commerciale ma un cattivo indicatore della qualità al consumo. Chi definisce uno standard interno ed esterno riceve meno sorprese.",
+      "Questa nota è contenuto dimostrativo per il sito Globe Harvest e non descrive un programma commerciale reale."
+    ],
+    "es": [
+      "Una especificación de mango funciona mejor cuando describe la fruta que el comprador quiere vender, no simplemente la que el productor tiene disponible. La variedad es la primera decisión porque fija las expectativas de fibra, color de pulpa y comportamiento en el lineal. Kent y Keitt se comportan de forma distinta en cámara de maduración aunque lleguen con la misma madurez.",
+      "La segunda decisión es la madurez de recolección, expresada en materia seca, brix o color de pulpa según el programa. El color exterior es una buena señal comercial pero un mal indicador de calidad de consumo. Quien define un estándar interno y otro externo recibe menos sorpresas.",
+      "Esta nota es contenido ilustrativo de demostración del sitio Globe Harvest y no describe un programa comercial real."
+    ]
+  }
+}

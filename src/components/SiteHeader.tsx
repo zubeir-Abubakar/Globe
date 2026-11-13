@@ -4,19 +4,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { t } from "@/lib/i18n";
+import { LocaleFlag } from "@/components/LocaleFlag";
 import type { Locale } from "@/lib/content";
+import { languageNames, t } from "@/lib/i18n";
 
-type NavCategory = { id: string; name: string; image: string | null };
+type NavCategory = { id: string; name: string; image: string };
 type SearchEntry = { title: string; description: string; href: string; kind: string };
 
-const languageOptions: { locale: Locale; flag: string; label: string }[] = [
-  { locale: "fr", flag: "🇫🇷", label: "Français" },
-  { locale: "de", flag: "🇩🇪", label: "Deutsch" },
-  { locale: "en", flag: "🇬🇧", label: "English" },
-  { locale: "it", flag: "🇮🇹", label: "Italiano" },
-  { locale: "es", flag: "🇪🇸", label: "Español" },
-];
+const languageOptions: Locale[] = ["en", "de", "fr", "it", "es"];
+
+function SearchIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+    >
+      <circle cx="10.8" cy="10.8" r="6.8" />
+      <path d="m16 16 4.2 4.2" />
+    </svg>
+  );
+}
 
 export function SiteHeader({
   locale,
@@ -37,6 +48,7 @@ export function SiteHeader({
   const [query, setQuery] = useState("");
   const productPopoverRef = useRef<HTMLDivElement>(null);
   const menuToggleRef = useRef<HTMLButtonElement>(null);
+
   const isCurrent = (href: string) =>
     pathname === href || pathname?.startsWith(`${href}/`);
 
@@ -45,10 +57,10 @@ export function SiteHeader({
   }, [locale]);
 
   useEffect(() => {
-    const updateScrollState = () => setScrolled(window.scrollY > 24);
-    updateScrollState();
-    window.addEventListener("scroll", updateScrollState, { passive: true });
-    return () => window.removeEventListener("scroll", updateScrollState);
+    const update = () => setScrolled(window.scrollY > 24);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
   }, []);
 
   const results = useMemo(() => {
@@ -66,14 +78,13 @@ export function SiteHeader({
   useEffect(() => {
     if (!searchOpen && !mobileOpen && !languageOpen && !productsOpen) return;
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        const closeMobileMenu = mobileOpen;
-        setSearchOpen(false);
-        setMobileOpen(false);
-        setLanguageOpen(false);
-        setProductsOpen(false);
-        if (closeMobileMenu) menuToggleRef.current?.focus();
-      }
+      if (event.key !== "Escape") return;
+      const wasMobile = mobileOpen;
+      setSearchOpen(false);
+      setMobileOpen(false);
+      setLanguageOpen(false);
+      setProductsOpen(false);
+      if (wasMobile) menuToggleRef.current?.focus();
     };
     document.addEventListener("keydown", closeOnEscape);
     return () => document.removeEventListener("keydown", closeOnEscape);
@@ -81,13 +92,13 @@ export function SiteHeader({
 
   useEffect(() => {
     if (!mobileOpen) return;
-    const previousOverflow = document.body.style.overflow;
+    const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    document.querySelector<HTMLElement>(
-      "#primary-navigation a, #primary-navigation button",
-    )?.focus();
+    document
+      .querySelector<HTMLElement>("#primary-navigation a, #primary-navigation button")
+      ?.focus();
     return () => {
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow = previous;
     };
   }, [mobileOpen]);
 
@@ -107,18 +118,18 @@ export function SiteHeader({
 
   useEffect(() => {
     if (!searchOpen) return;
-    const focus = window.setTimeout(
+    const timer = window.setTimeout(
       () => document.getElementById("site-search-input")?.focus(),
       0,
     );
-    return () => window.clearTimeout(focus);
+    return () => window.clearTimeout(timer);
   }, [searchOpen]);
 
   function changeLanguage(nextLocale: Locale) {
-    const pathnameParts = (pathname || `/${locale}`).split("/");
-    pathnameParts[1] = nextLocale;
+    const parts = (pathname || `/${locale}`).split("/");
+    parts[1] = nextLocale;
     router.push(
-      `${pathnameParts.join("/") || `/${nextLocale}`}${window.location.search}${window.location.hash}`,
+      `${parts.join("/") || `/${nextLocale}`}${window.location.search}${window.location.hash}`,
     );
     setLanguageOpen(false);
     setMobileOpen(false);
@@ -130,30 +141,36 @@ export function SiteHeader({
     setLanguageOpen(false);
   }
 
+  const navLinks = [
+    { href: `/${locale}/company`, label: t(locale, "company") },
+    { href: `/${locale}/quality`, label: t(locale, "quality") },
+    { href: `/${locale}/sustainability`, label: t(locale, "sustainability") },
+    { href: `/${locale}/news`, label: t(locale, "news") },
+    { href: `/${locale}/careers`, label: t(locale, "careers") },
+    { href: `/${locale}/contact`, label: t(locale, "contact") },
+  ];
+
   return (
     <>
       <a className="skip-link" href="#main-content">
         {t(locale, "skipToContent")}
       </a>
-      <header
-        className="site-header"
-        data-scrolled={scrolled}
-        data-mobile-open={mobileOpen}
-      >
+      <header className="site-header" data-scrolled={scrolled} data-mobile-open={mobileOpen}>
         <div className="container">
           <div className="nav-glass">
             <Link
               className="brand"
               href={`/${locale}`}
-              aria-label="PPO Services AG"
+              aria-label="Globe Harvest"
               onClick={closeMenus}
             >
               <Image
-                src="/ppo/_assets/1a1c4462d009da437855101cc7ff64ea/Images/ppo-logo.svg"
-                alt="PPO Services AG"
-                width={200}
-                height={65}
+                src="/brand/logo-horizontal.svg"
+                alt=""
+                width={630}
+                height={160}
                 priority
+                unoptimized
               />
             </Link>
 
@@ -163,13 +180,10 @@ export function SiteHeader({
               aria-label={t(locale, "siteNavigation")}
               data-open={mobileOpen}
             >
-              <button
-                className="mobile-drawer-close"
-                type="button"
-                onClick={closeMenus}
-              >
+              <button className="mobile-drawer-close" type="button" onClick={closeMenus}>
                 {t(locale, "closeMenu")}
               </button>
+
               <div className="nav-popover product-popover" ref={productPopoverRef}>
                 <button
                   className="nav-link nav-products-toggle"
@@ -181,15 +195,13 @@ export function SiteHeader({
                   onClick={() => setProductsOpen((open) => !open)}
                 >
                   {t(locale, "products")}
-                  <span className="products-chevron" aria-hidden="true">⌄</span>
+                  <span className="products-chevron" aria-hidden="true">
+                    ⌄
+                  </span>
                 </button>
-                <div
-                  className="mega-menu"
-                  id="product-mega-menu"
-                  hidden={!productsOpen}
-                >
+                <div className="mega-menu" id="product-mega-menu" hidden={!productsOpen}>
                   <div className="mega-menu-heading">
-                    <span className="section-kicker">{t(locale, "products")}</span>
+                    <span className="section-kicker">{t(locale, "categories")}</span>
                     <Link
                       className="mega-menu-all"
                       href={`/${locale}/products`}
@@ -206,47 +218,32 @@ export function SiteHeader({
                         key={category.id}
                         onClick={closeMenus}
                       >
-                        {category.image ? (
-                          <Image
-                            src={category.image}
-                            alt=""
-                            width={64}
-                            height={64}
-                          />
-                        ) : (
-                          <span className="category-placeholder" aria-hidden="true">
-                            {category.name.slice(0, 1)}
-                          </span>
-                        )}
+                        <Image
+                          src={category.image}
+                          alt=""
+                          width={64}
+                          height={64}
+                          unoptimized
+                        />
                         <strong>{category.name}</strong>
                       </Link>
                     ))}
                   </div>
                 </div>
               </div>
-              <Link className="nav-link" href={`/${locale}/company`} aria-current={isCurrent(`/${locale}/company`) ? "page" : undefined} onClick={closeMenus}>
-                {t(locale, "company")}
-              </Link>
-              <Link className="nav-link" href={`/${locale}/quality`} aria-current={isCurrent(`/${locale}/quality`) ? "page" : undefined} onClick={closeMenus}>
-                {t(locale, "quality")}
-              </Link>
-              <Link
-                className="nav-link"
-                href={`/${locale}/sustainability`}
-                aria-current={isCurrent(`/${locale}/sustainability`) ? "page" : undefined}
-                onClick={closeMenus}
-              >
-                {t(locale, "sustainability")}
-              </Link>
-              <Link className="nav-link" href={`/${locale}/news`} aria-current={isCurrent(`/${locale}/news`) ? "page" : undefined} onClick={closeMenus}>
-                {t(locale, "news")}
-              </Link>
-              <Link className="nav-link" href={`/${locale}/careers`} aria-current={isCurrent(`/${locale}/careers`) ? "page" : undefined} onClick={closeMenus}>
-                {t(locale, "careers")}
-              </Link>
-              <Link className="nav-link" href={`/${locale}/contact`} aria-current={isCurrent(`/${locale}/contact`) ? "page" : undefined} onClick={closeMenus}>
-                {t(locale, "contact")}
-              </Link>
+
+              {navLinks.map((link) => (
+                <Link
+                  className="nav-link"
+                  href={link.href}
+                  key={link.href}
+                  aria-current={isCurrent(link.href) ? "page" : undefined}
+                  onClick={closeMenus}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
               <Link
                 className="button button-primary mobile-nav-contact"
                 href={`/${locale}/contact`}
@@ -254,6 +251,27 @@ export function SiteHeader({
               >
                 {t(locale, "getInTouch")}
               </Link>
+
+              <div className="mobile-language">
+                <span className="mobile-language-label">
+                  {t(locale, "preferredLanguage")}
+                </span>
+                <div className="mobile-language-options">
+                  {languageOptions.map((option) => (
+                    <button
+                      className="mobile-language-option"
+                      type="button"
+                      key={option}
+                      aria-current={option === locale}
+                      aria-label={languageNames[option]}
+                      onClick={() => changeLanguage(option)}
+                    >
+                      <LocaleFlag locale={option} />
+                      <span>{option.toUpperCase()}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </nav>
 
             <div className="nav-actions">
@@ -264,32 +282,29 @@ export function SiteHeader({
                   aria-haspopup="true"
                   aria-expanded={languageOpen}
                   aria-controls="language-menu"
+                  aria-label={`${t(locale, "preferredLanguage")}: ${languageNames[locale]}`}
                   onClick={() => setLanguageOpen((open) => !open)}
                 >
-                  {languageOptions.find((option) => option.locale === locale)?.flag}{" "}
+                  <LocaleFlag locale={locale} />
                   {locale.toUpperCase()} <span aria-hidden="true">⌄</span>
                 </button>
-                <div
-                  className="language-menu"
-                  id="language-menu"
-                  hidden={!languageOpen}
-                >
+                <div className="language-menu" id="language-menu" hidden={!languageOpen}>
                   {languageOptions.map((option) => (
                     <button
                       className="language-option"
                       type="button"
-                      key={option.locale}
-                      aria-current={option.locale === locale}
-                      onClick={() => changeLanguage(option.locale)}
+                      key={option}
+                      aria-current={option === locale}
+                      onClick={() => changeLanguage(option)}
                     >
-                      <span aria-hidden="true">{option.flag}</span>
-                      <span>
-                        {option.locale.toUpperCase()} — {option.label}
-                      </span>
+                      <LocaleFlag locale={option} />
+                      <span className="language-code">{option.toUpperCase()}</span>
+                      <span>{languageNames[option]}</span>
                     </button>
                   ))}
                 </div>
               </div>
+
               <button
                 className="nav-action search-trigger"
                 type="button"
@@ -299,19 +314,10 @@ export function SiteHeader({
                   closeMenus();
                 }}
               >
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                >
-                  <circle cx="10.8" cy="10.8" r="6.8" />
-                  <path d="m16 16 4.2 4.2" />
-                </svg>
+                <SearchIcon />
                 <span className="search-word">{t(locale, "search")}</span>
               </button>
+
               <Link
                 className="button button-primary nav-contact"
                 href={`/${locale}/contact`}
@@ -319,6 +325,7 @@ export function SiteHeader({
               >
                 {t(locale, "getInTouch")}
               </Link>
+
               <button
                 className="menu-toggle"
                 type="button"
@@ -363,17 +370,7 @@ export function SiteHeader({
               {t(locale, "search")}
             </h2>
             <div className="search-input-wrap">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-              >
-                <circle cx="10.8" cy="10.8" r="6.8" />
-                <path d="m16 16 4.2 4.2" />
-              </svg>
+              <SearchIcon />
               <input
                 autoComplete="off"
                 id="site-search-input"
@@ -394,12 +391,16 @@ export function SiteHeader({
                 ×
               </button>
             </div>
-            <div className="search-results" role="listbox" aria-label={t(locale, "searchResults")}>
+            <div
+              className="search-results"
+              role="listbox"
+              aria-label={t(locale, "search")}
+            >
               {results.length ? (
                 results.map((entry) => (
                   <Link
                     className="search-result"
-                    href={entry.href.replace(/^\/de(?=\/|$)/, `/${locale}`)}
+                    href={entry.href}
                     key={`${entry.kind}-${entry.href}`}
                     role="option"
                     onClick={() => {
@@ -415,7 +416,7 @@ export function SiteHeader({
                   </Link>
                 ))
               ) : (
-                <p className="search-empty">{t(locale, "noSearchResults")}</p>
+                <p className="search-empty">{t(locale, "noProductsMatch")}</p>
               )}
             </div>
           </section>

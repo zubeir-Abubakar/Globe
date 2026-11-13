@@ -1,0 +1,59 @@
+{
+  "id": "grapes",
+  "names": {
+    "en": "Grapes",
+    "de": "Trauben",
+    "fr": "Raisins",
+    "it": "Uva",
+    "es": "Uvas"
+  },
+  "description": {
+    "en": "Table grapes selected for berry size, bloom and stem freshness, with careful cold-chain handling. Packed in punnets, pouches and bulk cartons for retail programmes.",
+    "de": "Tafeltrauben, ausgewählt nach Beerengrösse, Reif und Stielfrische, mit sorgfältiger Kühlkettenführung. Verpackt in Schalen, Beuteln und Grosskartons für Detailhandelsprogramme.",
+    "fr": "Des raisins de table sélectionnés pour la grosseur des baies, la pruine et la fraîcheur des rafles, avec une chaîne du froid soignée. Conditionnés en barquettes, sachets et cartons pour les programmes de détail.",
+    "it": "Uva da tavola selezionata per pezzatura degli acini, pruina e freschezza del raspo, con attenta gestione della catena del freddo. Confezionata in vaschette, sacchetti e cartoni per programmi di distribuzione.",
+    "es": "Uvas de mesa seleccionadas por tamaño de baya, pruina y frescura del raquis, con un cuidado manejo de la cadena de frío. Envasadas en bandejas, bolsas y cajas para programas minoristas."
+  },
+  "image": "/art/grapes.svg",
+  "products": [
+    {
+      "slug": "white-seedless",
+      "name": { "en": "White seedless grapes", "de": "Weisse kernlose Trauben", "fr": "Raisins blancs sans pépins", "it": "Uva bianca senza semi", "es": "Uvas blancas sin semillas" },
+      "note": {
+        "en": "Crisp, pale-green grapes with a bright sweetness. The workhorse of the fresh grape category.",
+        "de": "Knackige, hellgrüne Trauben mit frischer Süsse. Der Klassiker der Tafeltrauben.",
+        "fr": "Des raisins croquants vert clair à la douceur vive. La valeur sûre des raisins de table.",
+        "it": "Uva croccante e verde chiaro dalla dolcezza vivace. Il cavallo di battaglia dell'uva da tavola.",
+        "es": "Uvas crujientes de color verde claro y dulzor vivo. El pilar de la categoría de uva de mesa."
+      },
+      "image": "/art/grapes-white-seedless.svg",
+      "regions": ["southern-europe", "latin-america", "southern-africa"]
+    },
+    {
+      "slug": "red-globe",
+      "name": { "en": "Red Globe grapes", "de": "Red-Globe-Trauben", "fr": "Raisins Red Globe", "it": "Uva Red Globe", "es": "Uvas Red Globe" },
+      "note": {
+        "en": "Large, deep-red berries with a firm bite and a generous bunch. Strong visual presence in mixed displays.",
+        "de": "Grosse, tiefrote Beeren mit festem Biss und üppiger Traube. Starke Präsenz in gemischten Displays.",
+        "fr": "De grosses baies rouge profond, à la chair ferme et à la grappe généreuse. Forte présence visuelle en présentoir mixte.",
+        "it": "Acini grandi e rosso intenso, dalla polpa soda e dal grappolo generoso. Forte presenza visiva negli espositori misti.",
+        "es": "Bayas grandes de color rojo intenso, de bocado firme y racimo generoso. Gran presencia visual en expositores mixtos."
+      },
+      "image": "/art/grapes-red-globe.svg",
+      "regions": ["latin-america", "southern-africa"]
+    },
+    {
+      "slug": "crimson",
+      "name": { "en": "Crimson Seedless grapes", "de": "Crimson-Trauben", "fr": "Raisins Crimson", "it": "Uva Crimson", "es": "Uvas Crimson" },
+      "note": {
+        "en": "Slender crimson grapes with a distinctive crunch and long shelf life. Popular in premium punnets.",
+        "de": "Schlanke Crimson-Trauben mit charakteristischem Knack und langer Haltbarkeit. Beliebt in Premium-Schalen.",
+        "fr": "Des raisins Crimson allongés, au croquant caractéristique et à longue tenue. Appréciés en barquettes premium.",
+        "it": "Uva Crimson allungata, con croccantezza distintiva e lunga conservabilità. Apprezzata nelle vaschette premium.",
+        "es": "Uvas Crimson alargadas, con un crujido característico y larga conservación. Muy apreciadas en bandejas premium."
+      },
+      "image": "/art/grapes-crimson.svg",
+      "regions": ["latin-america", "southern-europe"]
+    }
+  ]
+}

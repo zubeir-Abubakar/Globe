@@ -1,0 +1,59 @@
+{
+  "id": "tropical-fruits",
+  "names": {
+    "en": "Exotic tropical fruits",
+    "de": "Exotische Tropenfrüchte",
+    "fr": "Fruits tropicaux exotiques",
+    "it": "Frutta tropicale esotica",
+    "es": "Frutas tropicales exóticas"
+  },
+  "description": {
+    "en": "A rotating selection of specialty tropical fruits for adventurous retail and food service. Chosen for eating quality and packed to protect delicate skins in transit.",
+    "de": "Eine wechselnde Auswahl an tropischen Spezialitäten für anspruchsvollen Detailhandel und Gastronomie. Nach Essqualität ausgewählt und so verpackt, dass empfindliche Schalen den Transport überstehen.",
+    "fr": "Une sélection tournante de fruits tropicaux de spécialité pour le détail exigeant et la restauration. Choisis pour leur qualité gustative et emballés pour protéger les peaux fragiles.",
+    "it": "Una selezione a rotazione di frutta tropicale specialistica per distribuzione esigente e ristorazione. Scelta per la qualità al consumo e confezionata per proteggere le bucce delicate.",
+    "es": "Una selección rotativa de frutas tropicales especiales para minoristas exigentes y restauración. Elegidas por su calidad de consumo y envasadas para proteger las pieles delicadas."
+  },
+  "image": "/art/tropical.svg",
+  "products": [
+    {
+      "slug": "dragon-fruit",
+      "name": { "en": "Dragon fruit", "de": "Drachenfrucht", "fr": "Fruit du dragon", "it": "Frutto del drago", "es": "Pitahaya" },
+      "note": {
+        "en": "Vivid pink-skinned pitahaya with white, delicately sweet flesh. An eye-catching addition to tropical displays.",
+        "de": "Leuchtend rosa Pitahaya mit weissem, zart süssem Fruchtfleisch. Ein Blickfang in tropischen Displays.",
+        "fr": "Une pitahaya à la peau rose vive et à la chair blanche délicatement sucrée. Un atout visuel pour les présentoirs tropicaux.",
+        "it": "Pitahaya dalla buccia rosa vivace e polpa bianca delicatamente dolce. Un richiamo visivo negli espositori tropicali.",
+        "es": "Pitahaya de piel rosa viva y pulpa blanca delicadamente dulce. Un atractivo visual en los expositores tropicales."
+      },
+      "image": "/art/tropical-dragon-fruit.svg",
+      "regions": ["southeast-asia", "latin-america"]
+    },
+    {
+      "slug": "papaya",
+      "name": { "en": "Papaya", "de": "Papaya", "fr": "Papaye", "it": "Papaia", "es": "Papaya" },
+      "note": {
+        "en": "Golden papayas with soft, melon-like flesh and a mild sweetness. Sold by count at defined ripeness.",
+        "de": "Goldene Papayas mit weichem, melonenartigem Fruchtfleisch und milder Süsse. Nach Stückzahl in definierter Reife erhältlich.",
+        "fr": "Des papayes dorées à la chair fondante, proche du melon, et à la douceur discrète. Vendues à la pièce à un stade de maturité défini.",
+        "it": "Papaie dorate con polpa morbida, simile al melone, e dolcezza delicata. Vendute a numero a maturazione definita.",
+        "es": "Papayas doradas de pulpa blanda, similar al melón, y dulzor suave. Se venden por unidad con maduración definida."
+      },
+      "image": "/art/tropical-papaya.svg",
+      "regions": ["latin-america", "southeast-asia"]
+    },
+    {
+      "slug": "passion-fruit",
+      "name": { "en": "Passion fruit", "de": "Maracuja", "fr": "Fruit de la passion", "it": "Frutto della passione", "es": "Maracuyá" },
+      "note": {
+        "en": "Wrinkled purple passion fruit with aromatic, seedy pulp and a sharp acidity. Packed in count punnets.",
+        "de": "Runzlige lila Maracujas mit aromatischem, kernreichem Fruchtfleisch und spitzer Säure. Verpackt in Stückzahl-Schalen.",
+        "fr": "Des fruits de la passion violets ridés, à chair aromatique et pépins, d'une acidité franche. Conditionnés en barquettes à la pièce.",
+        "it": "Frutti della passione viola e rugosi, con polpa aromatica e ricca di semi e acidità decisa. Confezionati in vaschette a numero.",
+        "es": "Maracuyás moradas y arrugadas, de pulpa aromática con semillas y acidez marcada. Envasadas en bandejas por unidades."
+      },
+      "image": "/art/tropical-passion-fruit.svg",
+      "regions": ["latin-america", "southeast-asia", "southern-africa"]
+    }
+  ]
+}

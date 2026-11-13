@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img">
+  <defs>
+    <linearGradient id="bg-bananas-plantain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#faf3e4"/>
+      <stop offset="1" stop-color="#f0e4c8"/>
+    </linearGradient>
+    <radialGradient id="glow-bananas-plantain" cx="62%" cy="18%" r="78%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="clip-bananas-plantain"><rect width="1200" height="900"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip-bananas-plantain)">
+    <rect width="1200" height="900" fill="url(#bg-bananas-plantain)"/>
+    <circle cx="1030" cy="120" r="330" fill="#fffdf5" opacity="0.5"/>
+    <circle cx="1030" cy="120" r="330" fill="url(#glow-bananas-plantain)"/>
+    <circle cx="120" cy="860" r="280" fill="none" stroke="#d6bd86" stroke-width="1.5" opacity="0.65"/>
+    <circle cx="120" cy="860" r="205" fill="none" stroke="#d6bd86" stroke-width="1" opacity="0.45"/>
+    <path d="M0 742C214 690 386 788 602 756s364-128 598-74v218H0Z" fill="#eadcb8" opacity="0.5"/>
+    <g transform="translate(600 460) rotate(-2)">
+      
+    <ellipse cx="24" cy="98" rx="230" ry="170" fill="#9a843c" opacity="0.3"/>
+    <g transform="rotate(-8)">
+      <path d="M-236 96C-176 250 96 286 252 132c-92 58-232 44-286-32-28-39-70-48-120-26" fill="#edd067"/>
+      <path d="M-222 84C-156 208 92 236 228 116c-78 36-190 20-236-42-24-32-70-44-128-18" fill="#f9e9a7" opacity="0.55"/>
+      <path d="M-238 94c-40 16-64 44-64 76 26-20 50-28 78-26" fill="#725a25"/>
+      <path d="M226 118c18-10 30-24 34-40-20 8-38 18-52 30Z" fill="#725a25"/>
+    </g>
+    </g>
+  </g>
+</svg>

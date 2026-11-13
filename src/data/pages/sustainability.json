@@ -1,0 +1,75 @@
+{
+  "id": "sustainability",
+  "path": "sustainability",
+  "image": "/art/field.svg",
+  "title": {
+    "en": "Better journeys, better fruit.",
+    "de": "Bessere Wege, bessere Ware.",
+    "fr": "De meilleurs trajets, de meilleurs fruits.",
+    "it": "Viaggi migliori, frutta migliore.",
+    "es": "Mejores trayectos, mejor fruta."
+  },
+  "intro": {
+    "en": "Most of a fresh produce company's environmental impact sits in transport, packaging and cold storage. We treat those as design decisions, not as an afterthought.",
+    "de": "Ein grosser Teil der Umweltwirkung eines Frischwarenhändlers entsteht bei Transport, Verpackung und Kühllagerung. Wir behandeln diese Punkte als Planungsentscheidungen, nicht als Nachgedanken.",
+    "fr": "L'essentiel de l'impact environnemental d'un négociant en produits frais se situe dans le transport, l'emballage et le froid. Nous les traitons comme des choix de conception, non comme une réflexion tardive.",
+    "it": "La maggior parte dell'impatto ambientale di un commerciante di prodotti freschi riguarda trasporto, imballaggio e conservazione refrigerata. Li trattiamo come scelte progettuali, non come un ripensamento.",
+    "es": "La mayor parte del impacto ambiental de un comercializador de producto fresco está en el transporte, el envasado y la conservación en frío. Los tratamos como decisiones de diseño, no como algo accesorio."
+  },
+  "sections": [
+    {
+      "heading": {
+        "en": "Fewer empty kilometres",
+        "de": "Weniger leere Kilometer",
+        "fr": "Moins de kilomètres à vide",
+        "it": "Meno chilometri a vuoto",
+        "es": "Menos kilómetros en vacío"
+      },
+      "body": [
+        {
+          "en": "Shipments are consolidated where product compatibility and transit time allow it. A fuller container is not always a better one, but a planned load is almost always better than two improvised ones.",
+          "de": "Sendungen werden konsolidiert, wo Produktverträglichkeit und Transportzeit es zulassen. Ein vollerer Container ist nicht immer besser, aber eine geplante Ladung fast immer besser als zwei improvisierte.",
+          "fr": "Les expéditions sont regroupées lorsque la compatibilité des produits et les délais le permettent. Un conteneur plus plein n'est pas toujours meilleur, mais un chargement planifié l'est presque toujours face à deux chargements improvisés.",
+          "it": "Le spedizioni vengono consolidate quando la compatibilità dei prodotti e i tempi lo consentono. Un container più pieno non è sempre migliore, ma un carico pianificato lo è quasi sempre rispetto a due carichi improvvisati.",
+          "es": "Los envíos se consolidan cuando la compatibilidad del producto y el tiempo de tránsito lo permiten. Un contenedor más lleno no siempre es mejor, pero una carga planificada casi siempre lo es frente a dos improvisadas."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "Packaging with a purpose",
+        "de": "Verpackung mit Aufgabe",
+        "fr": "Un emballage qui a un rôle",
+        "it": "Imballaggi con uno scopo",
+        "es": "Envases con una función"
+      },
+      "body": [
+        {
+          "en": "Packaging protects the product first. We prefer formats that can be recycled where the local waste stream supports it, and we avoid layers that add cost without adding protection. Buyer requirements always come first.",
+          "de": "Verpackung schützt zuerst das Produkt. Wir bevorzugen Formate, die dort recycelbar sind, wo die lokale Entsorgung es zulässt, und vermeiden Schichten, die Kosten ohne Schutz hinzufügen. Kundenanforderungen gehen vor.",
+          "fr": "L'emballage protège d'abord le produit. Nous privilégions les formats recyclables là où la filière locale le permet et évitons les couches qui ajoutent du coût sans protection. Les exigences de l'acheteur restent prioritaires.",
+          "it": "L'imballaggio protegge innanzitutto il prodotto. Preferiamo formati riciclabili dove la filiera locale lo consente ed evitiamo strati che aggiungono costo senza protezione. Le esigenze dell'acquirente vengono sempre prima.",
+          "es": "El envase protege primero el producto. Preferimos formatos reciclables allí donde la gestión local lo permite y evitamos capas que añaden coste sin protección. Los requisitos del comprador son siempre prioritarios."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "Claims we can support",
+        "de": "Aussagen, die wir belegen können",
+        "fr": "Des affirmations que nous pouvons étayer",
+        "it": "Affermazioni che possiamo sostenere",
+        "es": "Afirmaciones que podemos respaldar"
+      },
+      "body": [
+        {
+          "en": "We do not publish certification marks or footprint figures we cannot evidence. This page describes operating principles and is intentionally free of sustainability claims that a trading website cannot verify.",
+          "de": "Wir veröffentlichen keine Zertifizierungszeichen oder Fussabdruckzahlen, die wir nicht belegen können. Diese Seite beschreibt Arbeitsprinzipien und verzichtet bewusst auf Nachhaltigkeitsaussagen, die eine Handelswebsite nicht überprüfen kann.",
+          "fr": "Nous ne publions pas de marques de certification ni de chiffres d'empreinte que nous ne pouvons pas justifier. Cette page décrit des principes de travail et reste volontairement dépourvue d'allégations que un site de négoce ne peut pas vérifier.",
+          "it": "Non pubblichiamo marchi di certificazione o dati di impronta che non possiamo dimostrare. Questa pagina descrive principi operativi ed è volutamente priva di dichiarazioni di sostenibilità che un sito commerciale non può verificare.",
+          "es": "No publicamos sellos de certificación ni cifras de huella que no podamos demostrar. Esta página describe principios operativos y carece deliberadamente de afirmaciones de sostenibilidad que un sitio comercial no puede verificar."
+        }
+      ]
+    }
+  ]
+}

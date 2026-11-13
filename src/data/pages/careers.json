@@ -1,0 +1,57 @@
+{
+  "id": "careers",
+  "path": "careers",
+  "image": "/art/news-3.svg",
+  "title": {
+    "en": "A career measured in seasons.",
+    "de": "Eine Karriere in Saisons gedacht.",
+    "fr": "Une carrière au rythme des saisons.",
+    "it": "Una carriera scandita dalle stagioni.",
+    "es": "Una carrera medida en temporadas."
+  },
+  "intro": {
+    "en": "Fresh produce rewards people who are curious about origin, precise in detail and calm when a shipment changes course. This is a demonstration website, so no vacancies are currently listed.",
+    "de": "Der Frischwarenhandel belohnt Menschen, die sich für Herkunft interessieren, präzise arbeiten und ruhig bleiben, wenn eine Sendung ihren Lauf ändert. Dies ist eine Demonstrationswebsite; derzeit sind keine Stellen ausgeschrieben.",
+    "fr": "Le négoce de produits frais récompense les personnes curieuses de l'origine, précises dans le détail et calmes lorsqu'une expédition change de cap. Ce site est une démonstration : aucune offre d'emploi n'est actuellement publiée.",
+    "it": "Il commercio di prodotti freschi premia chi è curioso dell'origine, preciso nei dettagli e calmo quando una spedizione cambia rotta. Questo è un sito dimostrativo: al momento non sono pubblicate posizioni aperte.",
+    "es": "El comercio de producto fresco premia a quienes sienten curiosidad por el origen, son precisos en el detalle y mantienen la calma cuando un envío cambia de rumbo. Este es un sitio de demostración, por lo que no hay vacantes publicadas."
+  },
+  "sections": [
+    {
+      "heading": {
+        "en": "What the work looks like",
+        "de": "Wie die Arbeit aussieht",
+        "fr": "Le quotidien du métier",
+        "it": "Come si svolge il lavoro",
+        "es": "Cómo es el trabajo"
+      },
+      "body": [
+        {
+          "en": "Typical roles in a trading house combine commercial coordination, product knowledge, logistics follow-up and clear written communication in more than one language. Experience in fresh produce is valuable, but precision and curiosity matter more than a perfect CV.",
+          "de": "Typische Aufgaben in einem Handelshaus verbinden kommerzielle Koordination, Produktkenntnis, Logistiknachverfolgung und klare schriftliche Kommunikation in mehreren Sprachen. Erfahrung mit Frischware hilft, doch Präzision und Neugier zählen mehr als ein perfekter Lebenslauf.",
+          "fr": "Les métiers d'une maison de négoce associent coordination commerciale, connaissance produit, suivi logistique et communication écrite claire dans plusieurs langues. L'expérience des produits frais est utile, mais la précision et la curiosité comptent plus qu'un CV parfait.",
+          "it": "I ruoli tipici di una casa commerciale uniscono coordinamento commerciale, conoscenza del prodotto, follow-up logistico e comunicazione scritta chiara in più lingue. L'esperienza nei prodotti freschi è utile, ma precisione e curiosità contano più di un CV perfetto.",
+          "es": "Los roles habituales en una casa comercial combinan coordinación comercial, conocimiento de producto, seguimiento logístico y comunicación escrita clara en más de un idioma. La experiencia en fresco ayuda, pero la precisión y la curiosidad importan más que un CV perfecto."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "Speculative applications",
+        "de": "Initiativbewerbungen",
+        "fr": "Candidatures spontanées",
+        "it": "Candidature spontanee",
+        "es": "Candidaturas espontáneas"
+      },
+      "body": [
+        {
+          "en": "Use the contact form and choose “General enquiry”. Include the languages you work in and the part of the supply chain that interests you. In a live deployment the buyer's own recruitment process would apply here.",
+          "de": "Nutzen Sie das Kontaktformular und wählen Sie „Allgemeine Anfrage“. Nennen Sie Ihre Arbeitssprachen und den Teil der Lieferkette, der Sie interessiert. In einer Live-Umgebung würde hier das Rekrutierungsverfahren des Käufers gelten.",
+          "fr": "Utilisez le formulaire de contact et choisissez « Demande générale ». Indiquez vos langues de travail et le maillon de la chaîne d'approvisionnement qui vous intéresse. En production, le processus de recrutement de l'acheteur s'appliquerait ici.",
+          "it": "Usate il modulo di contatto e scegliete «Richiesta generale». Indicate le lingue di lavoro e la parte della filiera che vi interessa. In un'installazione live si applicherebbe qui il processo di selezione dell'acquirente.",
+          "es": "Utilice el formulario de contacto y elija «Consulta general». Indique los idiomas en los que trabaja y la parte de la cadena de suministro que le interesa. En una implantación real se aplicaría aquí el proceso de selección del comprador."
+        }
+      ]
+    }
+  ]
+}

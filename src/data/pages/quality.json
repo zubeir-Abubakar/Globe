@@ -1,0 +1,75 @@
+{
+  "id": "quality",
+  "path": "quality",
+  "image": "/art/quality.svg",
+  "title": {
+    "en": "Quality is a process, not a promise.",
+    "de": "Qualität ist ein Prozess, kein Versprechen.",
+    "fr": "La qualité est un processus, pas une promesse.",
+    "it": "La qualità è un processo, non una promessa.",
+    "es": "La calidad es un proceso, no una promesa."
+  },
+  "intro": {
+    "en": "Fresh produce is judged on arrival. Our quality approach is built around the decisions that determine arrival condition: harvest maturity, cooling, grading, packing and transit.",
+    "de": "Frische Ware wird bei der Ankunft beurteilt. Unser Qualitätsansatz orientiert sich an den Entscheidungen, die den Zustand bei Ankunft bestimmen: Erntreife, Kühlung, Sortierung, Verpackung und Transport.",
+    "fr": "Un produit frais se juge à l'arrivée. Notre approche qualité s'articule autour des décisions qui déterminent cet état : maturité de récolte, refroidissement, calibrage, emballage et transport.",
+    "it": "I prodotti freschi si giudicano all'arrivo. Il nostro approccio alla qualità ruota attorno alle decisioni che determinano le condizioni di arrivo: maturazione alla raccolta, raffreddamento, selezione, imballaggio e trasporto.",
+    "es": "El producto fresco se juzga a la llegada. Nuestro enfoque de calidad gira en torno a las decisiones que determinan ese estado: madurez de recolección, enfriamiento, clasificación, envasado y transporte."
+  },
+  "sections": [
+    {
+      "heading": {
+        "en": "At origin",
+        "de": "Am Ursprung",
+        "fr": "À l'origine",
+        "it": "All'origine",
+        "es": "En origen"
+      },
+      "body": [
+        {
+          "en": "Specifications are agreed before harvest: variety, calibre, colour, brix where relevant, pack format and pallet configuration. The grower receives the specification in writing and a single operational contact for the season.",
+          "de": "Spezifikationen werden vor der Ernte vereinbart: Sorte, Kaliber, Farbe, Brix wo relevant, Verpackungsformat und Palettenkonfiguration. Der Produzent erhält die Spezifikation schriftlich und einen festen operativen Ansprechpartner für die Saison.",
+          "fr": "Les spécifications sont convenues avant récolte : variété, calibre, couleur, brix le cas échéant, format d'emballage et palettisation. Le producteur reçoit la spécification par écrit et un interlocuteur opérationnel unique pour la saison.",
+          "it": "Le specifiche vengono concordate prima della raccolta: varietà, calibro, colore, brix ove pertinente, formato di imballaggio e pallettizzazione. Il produttore riceve la specifica per iscritto e un unico referente operativo per la stagione.",
+          "es": "Las especificaciones se acuerdan antes de la cosecha: variedad, calibre, color, brix cuando proceda, formato de envase y paletizado. El productor recibe la especificación por escrito y un único contacto operativo para la temporada."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "In transit",
+        "de": "Auf dem Transport",
+        "fr": "Pendant le transport",
+        "it": "Durante il trasporto",
+        "es": "Durante el transporte"
+      },
+      "body": [
+        {
+          "en": "Temperature, ventilation and transit time are matched to the product and the season. Where a deviation occurs, it is documented and communicated to the buyer before the shipment is released to the market.",
+          "de": "Temperatur, Belüftung und Transportzeit werden auf Produkt und Saison abgestimmt. Kommt es zu einer Abweichung, wird sie dokumentiert und dem Käufer mitgeteilt, bevor die Sendung in den Markt geht.",
+          "fr": "Température, ventilation et durée de transport sont adaptées au produit et à la saison. En cas d'écart, celui-ci est documenté et communiqué à l'acheteur avant la mise en marché de l'expédition.",
+          "it": "Temperatura, ventilazione e tempi di transito sono adattati al prodotto e alla stagione. In caso di scostamento, questo viene documentato e comunicato all'acquirente prima dell'immissione sul mercato.",
+          "es": "La temperatura, la ventilación y el tiempo de tránsito se ajustan al producto y a la temporada. Si se produce una desviación, se documenta y se comunica al comprador antes de liberar el envío al mercado."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "On arrival",
+        "de": "Bei der Ankunft",
+        "fr": "À l'arrivée",
+        "it": "All'arrivo",
+        "es": "A la llegada"
+      },
+      "body": [
+        {
+          "en": "Buyers receive the commercial and transport documents needed to inspect and receive the goods. Quality observations are handled against the agreed specification, with photographs and lot references rather than opinion.",
+          "de": "Käufer erhalten die handels- und transportrelevanten Dokumente, die für Prüfung und Übernahme nötig sind. Qualitätsfeststellungen werden an der vereinbarten Spezifikation gemessen – mit Fotos und Partieangaben statt Meinungen.",
+          "fr": "Les acheteurs reçoivent les documents commerciaux et de transport nécessaires au contrôle et à la réception. Les observations qualité sont traitées par rapport à la spécification convenue, avec photos et références de lot plutôt qu'avec des impressions.",
+          "it": "Gli acquirenti ricevono i documenti commerciali e di trasporto necessari per il controllo e la ricezione. Le osservazioni sulla qualità vengono gestite rispetto alla specifica concordata, con foto e riferimenti di lotto, non con opinioni.",
+          "es": "Los compradores reciben los documentos comerciales y de transporte necesarios para inspeccionar y recibir la mercancía. Las observaciones de calidad se tratan frente a la especificación acordada, con fotografías y referencias de lote en lugar de opiniones."
+        }
+      ]
+    }
+  ]
+}

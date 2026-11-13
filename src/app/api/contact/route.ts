@@ -2,16 +2,12 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { isLocale, type Locale } from "@/lib/content";
 import { t } from "@/lib/i18n";
+import { site } from "@/lib/site";
 
 export const runtime = "nodejs";
 
-const formspreeEndpoint = "https://formspree.io/f/mgaapzjr";
 const maxFileSize = 5 * 1024 * 1024;
 const maxRequestSize = 12 * 1024 * 1024;
-const departmentDestinations = {
-  hr: process.env.CONTACT_HR_EMAIL,
-  procurement: process.env.CONTACT_PROCUREMENT_EMAIL,
-} as const;
 const allowedTypes = new Map([
   [".pdf", "application/pdf"],
   [".jpeg", "image/jpeg"],
@@ -23,27 +19,26 @@ const allowedTypes = new Map([
 ]);
 const enquiryValues = [
   "Product enquiry",
-  "Customer / Buyer enquiry",
-  "Supplier / Producer enquiry",
-  "Partnership / Cooperation",
-  "Product specifications request",
-  "Quality and certification enquiry",
+  "Buyer / distributor enquiry",
+  "Grower / exporter enquiry",
+  "Partnership / cooperation",
+  "Product specification request",
+  "Quality and documentation enquiry",
   "General enquiry",
   "Other",
 ] as const;
+
 const formSchema = z.object({
   fullName: z.string().trim().min(2).max(120),
   companyName: z.string().trim().min(2).max(160),
   email: z.string().trim().email().max(254),
   country: z.string().trim().min(2).max(100),
-  preferredLanguage: z.enum(["de", "en", "fr", "it", "es"]),
+  preferredLanguage: z.enum(["en", "de", "fr", "it", "es"]),
   telephone: z.string().trim().max(50),
   website: z.union([z.literal(""), z.string().trim().url().max(240)]),
   enquiryType: z.enum(enquiryValues),
-  department: z.enum(["hr", "procurement"]).optional(),
   productCategories: z.array(z.string().trim().max(100)).max(12),
   productRange: z.string().trim().max(1200),
-  estimatedVolume: z.string().trim().max(200),
   productNames: z.string().trim().max(1200),
   origin: z.string().trim().max(300),
   quantity: z.string().trim().max(200),
@@ -99,7 +94,9 @@ async function hasExpectedSignature(file: File, extension: string) {
     return signature[0] === 0xff && signature[1] === 0xd8 && signature[2] === 0xff;
   }
   if (extension === ".png") {
-    return signature.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
+    return signature
+      .subarray(0, 8)
+      .equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
   }
   if (extension === ".docx") {
     return signature[0] === 0x50 && signature[1] === 0x4b;
@@ -107,32 +104,41 @@ async function hasExpectedSignature(file: File, extension: string) {
   return false;
 }
 
+function json(message: string, status: number, errors?: Record<string, string>) {
+  return NextResponse.json(
+    { message, ...(errors ? { errors } : {}) },
+    { status, headers: { "Cache-Control": "no-store" } },
+  );
+}
+
 export async function POST(request: Request) {
-  const localeHeader = request.headers.get("x-ppo-locale");
+  const localeHeader = request.headers.get("x-globe-locale");
   const responseLocale: Locale =
     localeHeader && isLocale(localeHeader) ? localeHeader : "en";
+
+  // Demonstration mode: never fake a successful submission.
+  if (!site.contactConfigured) {
+    return json(t(responseLocale, "demoModeNotice"), 503);
+  }
+
   const origin = request.headers.get("origin");
-  let validOrigin = true;
+  const host =
+    request.headers.get("x-forwarded-host") ?? request.headers.get("host");
   if (origin) {
     try {
-      validOrigin = new URL(origin).origin === new URL(request.url).origin;
+      const originHost = new URL(origin).host;
+      const requestHost = host ?? new URL(request.url).host;
+      if (originHost !== requestHost) {
+        return json(t(responseLocale, "invalidOrigin"), 403);
+      }
     } catch {
-      validOrigin = false;
+      return json(t(responseLocale, "invalidOrigin"), 403);
     }
-  }
-  if (!validOrigin) {
-    return NextResponse.json(
-      { message: t(responseLocale, "invalidOrigin") },
-      { status: 403, headers: { "Cache-Control": "no-store" } },
-    );
   }
 
   const contentLength = Number(request.headers.get("content-length") || 0);
   if (contentLength > maxRequestSize) {
-    return NextResponse.json(
-      { message: t(responseLocale, "requestTooLarge") },
-      { status: 413, headers: { "Cache-Control": "no-store" } },
-    );
+    return json(t(responseLocale, "requestTooLarge"), 413);
   }
 
   let formData: FormData;
@@ -140,28 +146,21 @@ export async function POST(request: Request) {
     formData = await readBoundedFormData(request);
   } catch (error) {
     if (error instanceof RequestTooLargeError) {
-      return NextResponse.json(
-        { message: t(responseLocale, "requestTooLarge") },
-        { status: 413, headers: { "Cache-Control": "no-store" } },
-      );
+      return json(t(responseLocale, "requestTooLarge"), 413);
     }
-    return NextResponse.json(
-      { message: t(responseLocale, "formUnreadable") },
-      { status: 400, headers: { "Cache-Control": "no-store" } },
-    );
+    return json(t(responseLocale, "formUnreadable"), 400);
   }
 
   if (String(formData.get("companyFax") ?? "").trim()) {
-    return NextResponse.json(
-      { message: t(responseLocale, "invalidSubmission") },
-      { status: 400, headers: { "Cache-Control": "no-store" } },
-    );
+    return json(t(responseLocale, "invalidSubmission"), 400);
   }
 
   const submittedLocale = formData.get("locale");
-  const locale: Locale = typeof submittedLocale === "string" && isLocale(submittedLocale)
-    ? submittedLocale
-    : "en";
+  const locale: Locale =
+    typeof submittedLocale === "string" && isLocale(submittedLocale)
+      ? submittedLocale
+      : "en";
+
   const parsed = formSchema.safeParse({
     fullName: formData.get("fullName"),
     companyName: formData.get("companyName"),
@@ -171,10 +170,8 @@ export async function POST(request: Request) {
     telephone: formData.get("telephone") ?? "",
     website: formData.get("website") ?? "",
     enquiryType: formData.get("enquiryType"),
-    department: formData.get("department") ?? undefined,
     productCategories: formData.getAll("productCategories"),
     productRange: formData.get("productRange") ?? "",
-    estimatedVolume: formData.get("estimatedVolume") ?? "",
     productNames: formData.get("productNames") ?? "",
     origin: formData.get("origin") ?? "",
     quantity: formData.get("quantity") ?? "",
@@ -193,21 +190,18 @@ export async function POST(request: Request) {
         errors[field] = t(locale, "invalidFields");
       }
     }
-    return NextResponse.json(
-      { message: t(locale, "invalidFields"), errors },
-      { status: 400, headers: { "Cache-Control": "no-store" } },
-    );
+    return json(t(locale, "invalidFields"), 400, errors);
   }
 
-  const files = formData.getAll("attachments").filter(isFile).filter((file) => file.size > 0);
+  const files = formData
+    .getAll("attachments")
+    .filter(isFile)
+    .filter((file) => file.size > 0);
+
   if (files.length > 4) {
-    return NextResponse.json(
-      {
-        message: t(locale, "attachmentCount"),
-        errors: { attachments: t(locale, "attachmentCount") },
-      },
-      { status: 400, headers: { "Cache-Control": "no-store" } },
-    );
+    return json(t(locale, "attachmentCount"), 400, {
+      attachments: t(locale, "attachmentCount"),
+    });
   }
 
   let attachmentBytes = 0;
@@ -221,24 +215,17 @@ export async function POST(request: Request) {
       file.size > maxFileSize ||
       !(await hasExpectedSignature(file, extension))
     ) {
-      return NextResponse.json(
-        {
-          message: t(locale, "attachmentInvalid"),
-          errors: { attachments: t(locale, "attachmentInvalid") },
-        },
-        { status: 400, headers: { "Cache-Control": "no-store" } },
-      );
+      return json(t(locale, "attachmentInvalid"), 400, {
+        attachments: t(locale, "attachmentInvalid"),
+      });
     }
     attachmentBytes += file.size;
   }
+
   if (attachmentBytes > 10 * 1024 * 1024) {
-    return NextResponse.json(
-      {
-        message: t(locale, "attachmentCombined"),
-        errors: { attachments: t(locale, "attachmentCombined") },
-      },
-      { status: 400, headers: { "Cache-Control": "no-store" } },
-    );
+    return json(t(locale, "attachmentCombined"), 400, {
+      attachments: t(locale, "attachmentCombined"),
+    });
   }
 
   const data = parsed.data;
@@ -247,20 +234,14 @@ export async function POST(request: Request) {
   outboundData.set("companyName", data.companyName);
   outboundData.set("email", data.email);
   outboundData.set("_replyto", data.email);
-  outboundData.set("_subject", `[PPO Website] ${data.enquiryType}`);
+  outboundData.set("_subject", `[Globe Harvest] ${data.enquiryType}`);
   outboundData.set("country", data.country);
   outboundData.set("preferredLanguage", data.preferredLanguage);
   outboundData.set("telephone", data.telephone);
   outboundData.set("website", data.website);
   outboundData.set("enquiryType", data.enquiryType);
-  if (data.department) {
-    outboundData.set("department", data.department);
-    const destination = departmentDestinations[data.department];
-    if (destination) outboundData.set("_to", destination);
-  }
   outboundData.set("productCategories", data.productCategories.join(", "));
   outboundData.set("productRange", data.productRange);
-  outboundData.set("estimatedVolume", data.estimatedVolume);
   outboundData.set("productNames", data.productNames);
   outboundData.set("origin", data.origin);
   outboundData.set("quantity", data.quantity);
@@ -274,34 +255,23 @@ export async function POST(request: Request) {
   }
 
   try {
-    const response = await fetch(formspreeEndpoint, {
+    const response = await fetch(site.formEndpoint, {
       method: "POST",
       headers: { Accept: "application/json" },
       body: outboundData,
       signal: AbortSignal.timeout(15_000),
     });
     if (!response.ok) {
-      console.error("Formspree contact delivery failed with status:", response.status);
-      return NextResponse.json(
-        { message: t(locale, "formFailed") },
-        { status: 502, headers: { "Cache-Control": "no-store" } },
-      );
+      console.error("Contact delivery failed with status:", response.status);
+      return json(t(locale, "formFailed"), 502);
     }
   } catch (error) {
     console.error(
-      "Formspree contact delivery failed:",
+      "Contact delivery failed:",
       error instanceof Error ? error.message : "Unknown network error",
     );
-    return NextResponse.json(
-      {
-        message: t(locale, "formFailed"),
-      },
-      { status: 502, headers: { "Cache-Control": "no-store" } },
-    );
+    return json(t(locale, "formFailed"), 502);
   }
 
-  return NextResponse.json(
-    { message: t(locale, "accepted") },
-    { status: 200, headers: { "Cache-Control": "no-store" } },
-  );
+  return json(t(locale, "accepted"), 200);
 }

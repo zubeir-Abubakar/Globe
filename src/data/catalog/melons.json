@@ -1,0 +1,59 @@
+{
+  "id": "melons",
+  "names": {
+    "en": "Melons",
+    "de": "Melonen",
+    "fr": "Melons",
+    "it": "Meloni",
+    "es": "Melones"
+  },
+  "description": {
+    "en": "Fragrant melons with a full sugar profile and reliable internal colour, graded by count and field lots. Handled dry and packed for crate, display and catering formats.",
+    "de": "Aromatische Melonen mit vollem Zuckergehalt und verlässlicher Innenfarbe, sortiert nach Stückzahl und Feldpartien. Trocken gehandhabt und verpackt für Kisten-, Theken- und Gastronomieformate.",
+    "fr": "Des melons parfumés au profil sucré et à la couleur interne fiable, calibrés par pièce et par lot. Manipulés au sec et conditionnés en caisses, en présentation et pour la restauration.",
+    "it": "Meloni profumati con profilo zuccherino pieno e colore interno affidabile, selezionati a numero e per lotti. Manipolati a secco e confezionati in cassette, espositori e formati per la ristorazione.",
+    "es": "Melones aromáticos de perfil azucarado completo y color interno fiable, clasificados por número y lotes. Manipulados en seco y envasados en cajas, expositores y formatos para restauración."
+  },
+  "image": "/art/melons.svg",
+  "products": [
+    {
+      "slug": "cantaloupe",
+      "name": { "en": "Cantaloupe melon", "de": "Cantaloupe-Melone", "fr": "Melon cantaloup", "it": "Melone cantalupo", "es": "Melón cantalupo" },
+      "note": {
+        "en": "Netted, orange-fleshed cantaloupes with a perfumed aroma and clean cavity. A dependable summer line.",
+        "de": "Genetzte Cantaloupe-Melonen mit orangem Fruchtfleisch, parfümiertem Aroma und sauberem Hohlraum. Eine verlässliche Sommerlinie.",
+        "fr": "Des cantaloups brodés à chair orange, arôme parfumé et cavité nette. Une valeur sûre de l'été.",
+        "it": "Meloni cantalupo reticolati, con polpa arancione, aroma profumato e cavità pulita. Una linea estiva affidabile.",
+        "es": "Melones cantalupo con malla, pulpa naranja, aroma perfumado y cavidad limpia. Una línea de verano fiable."
+      },
+      "image": "/art/melons-cantaloupe.svg",
+      "regions": ["southern-europe", "latin-america", "north-africa"]
+    },
+    {
+      "slug": "honeydew",
+      "name": { "en": "Honeydew melon", "de": "Honigmelone", "fr": "Melon honeydew", "it": "Melone honeydew", "es": "Melón honeydew" },
+      "note": {
+        "en": "Smooth, pale-green honeydew with dense, sweet flesh and a long shelf life when handled cool.",
+        "de": "Glatte, hellgrüne Honigmelonen mit dichtem, süssem Fruchtfleisch und langer Haltbarkeit bei kühler Handhabung.",
+        "fr": "Un melon honeydew lisse et vert pâle, à chair dense et sucrée, de longue conservation lorsqu'il est conservé au froid.",
+        "it": "Meloni honeydew lisci e verde chiaro, con polpa densa e dolce e lunga conservabilità se mantenuti al fresco.",
+        "es": "Melones honeydew lisos y de color verde claro, de pulpa densa y dulce y larga conservación si se mantienen fríos."
+      },
+      "image": "/art/melons-honeydew.svg",
+      "regions": ["southern-europe", "latin-america"]
+    },
+    {
+      "slug": "watermelon",
+      "name": { "en": "Watermelon", "de": "Wassermelone", "fr": "Pastèque", "it": "Anguria", "es": "Sandía" },
+      "note": {
+        "en": "Heavy, thin-rinded watermelons with vivid red flesh and few seeds. Available in personal and family sizes.",
+        "de": "Schwere, dünnschalige Wassermelonen mit leuchtend rotem Fruchtfleisch und wenigen Kernen. Erhältlich in Personal- und Familienformaten.",
+        "fr": "Des pastèques lourdes à écorce fine, chair rouge vive et peu de pépins. Disponibles en formats personnels et familiaux.",
+        "it": "Angurie pesanti con buccia sottile, polpa rosso vivo e pochi semi. Disponibili in formati personali e familiari.",
+        "es": "Sandías pesadas de corteza fina, pulpa de color rojo vivo y pocas semillas. Disponibles en formatos personales y familiares."
+      },
+      "image": "/art/melons-watermelon.svg",
+      "regions": ["southern-europe", "latin-america"]
+    }
+  ]
+}

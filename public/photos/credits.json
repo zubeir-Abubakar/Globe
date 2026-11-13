@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "local": "/photos/hero.jpg",
+    "title": "Farmer's Market Produce (Unsplash).jpg",
+    "artist": "Julian Hanslmaier j_h",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Farmer%27s_Market_Produce_(Unsplash).jpg"
+  },
+  "avocados": {
+    "local": "/photos/avocados.jpg",
+    "title": "Unripe Avocados (Unsplash).jpg",
+    "artist": "Nur Afni Setiyaningrum nurafnisetiyaningrum",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Unripe_Avocados_(Unsplash).jpg"
+  },
+  "mangoes": {
+    "local": "/photos/mangoes.jpg",
+    "title": "Mango fruits.JPG",
+    "artist": "Bhaskaranaidu",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mango_fruits.JPG"
+  },
+  "pineapples": {
+    "local": "/photos/pineapples.jpg",
+    "title": "Tropical Fruits (Unsplash).jpg",
+    "artist": "Watermelons watermelon",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Tropical_Fruits_(Unsplash).jpg"
+  },
+  "citrus": {
+    "local": "/photos/citrus.jpg",
+    "title": "Fresh Oranges (Unsplash).jpg",
+    "artist": "Erol Ahmed erol",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Fresh_Oranges_(Unsplash).jpg"
+  },
+  "bananas": {
+    "local": "/photos/bananas.jpg",
+    "title": "Bunch of bananas on sale.jpg",
+    "artist": "Wilfredor",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bunch_of_bananas_on_sale.jpg"
+  },
+  "berries": {
+    "local": "/photos/berries.jpg",
+    "title": "Blueberries at the Market (Unsplash).jpg",
+    "artist": "veeterzy veeterzy",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Blueberries_at_the_Market_(Unsplash).jpg"
+  },
+  "melons": {
+    "local": "/photos/melons.jpg",
+    "title": "Pieces of Watermelon (Unsplash).jpg",
+    "artist": "Neha Deshmukh nehadeshmukh",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Pieces_of_Watermelon_(Unsplash).jpg"
+  },
+  "grapes": {
+    "local": "/photos/grapes.jpg",
+    "title": "Grapes (Unsplash).jpg",
+    "artist": "Thomas Schaefer tomonine",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "Cropped from the original to focus on the foreground grape bunches.",
+    "source": "https://commons.wikimedia.org/wiki/File:Grapes_(Unsplash).jpg"
+  },
+  "tropical": {
+    "local": "/photos/tropical.jpg",
+    "title": "Papaya raindrop.jpg",
+    "artist": "Muhammad Mahdi Karim",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Papaya_raindrop.jpg"
+  },
+  "vegetables": {
+    "local": "/photos/vegetables.jpg",
+    "title": "Basket of Vegetables (Unsplash).jpg",
+    "artist": "Markus Spiske markusspiske",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Basket_of_Vegetables_(Unsplash).jpg"
+  },
+  "company": {
+    "local": "/photos/company.jpg",
+    "title": "Autumn orchard (Unsplash).jpg",
+    "artist": "Lukas Budimaier lukasbudimaier",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Autumn_orchard_(Unsplash).jpg"
+  },
+  "cta": {
+    "local": "/photos/cta.jpg",
+    "title": "Farm Field (Unsplash).jpg",
+    "artist": "Arkadiusz Zet jotte",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Farm_Field_(Unsplash).jpg"
+  },
+  "feat-hass": {
+    "local": "/photos/feat-hass.jpg",
+    "title": "Liat Portal for Foodie Disorder - Avocado Halves.jpg",
+    "artist": "HaJunkiyada",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Avocado_Halves.jpg"
+  },
+  "feat-blueberries": {
+    "local": "/photos/feat-blueberries.jpg",
+    "title": "Bowl of Berries (Unsplash).jpg",
+    "artist": "Brandon Wilson brandon_wilson",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bowl_of_Berries_(Unsplash).jpg"
+  },
+  "feat-oranges": {
+    "local": "/photos/feat-oranges.jpg",
+    "title": "Orange Basket (Unsplash).jpg",
+    "artist": "Raul Petri raulpetri",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Orange_Basket_(Unsplash).jpg"
+  },
+  "feat-grapes": {
+    "local": "/photos/feat-grapes.jpg",
+    "title": "Grape bunch (Unsplash).jpg",
+    "artist": "Rohit Tandon rohittandon",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Grape_bunch_(Unsplash).jpg"
+  }
+}

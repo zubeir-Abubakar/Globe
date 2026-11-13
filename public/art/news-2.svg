@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img">
+  <defs>
+    <linearGradient id="bg-news2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9efe6"/>
+      <stop offset="1" stop-color="#dae5d6"/>
+    </linearGradient>
+    <radialGradient id="g-news2" cx="70%" cy="10%" r="80%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="c-news2"><rect width="1200" height="900"/></clipPath>
+  </defs>
+  <g clip-path="url(#c-news2)">
+    <rect width="1200" height="900" fill="url(#bg-news2)"/>
+    <rect width="1200" height="900" fill="url(#g-news2)"/>
+    <g transform="translate(600 450)"><g>
+      <rect x="-270" y="-120" width="130" height="230" rx="12" fill="#2f5d45"/>
+        <rect x="-250" y="-88" width="90" height="52" rx="6" fill="#faf7ef" opacity="0.85"/>
+        <path d="M-250 10h90M-250 42h64" stroke="#faf7ef" stroke-width="5" opacity="0.75"/><rect x="-90" y="-120" width="130" height="230" rx="12" fill="#c08a3e"/>
+        <rect x="-70" y="-88" width="90" height="52" rx="6" fill="#faf7ef" opacity="0.85"/>
+        <path d="M-70 10h90M-70 42h64" stroke="#faf7ef" stroke-width="5" opacity="0.75"/><rect x="90" y="-120" width="130" height="230" rx="12" fill="#2f5d45"/>
+        <rect x="110" y="-88" width="90" height="52" rx="6" fill="#faf7ef" opacity="0.85"/>
+        <path d="M110 10h90M110 42h64" stroke="#faf7ef" stroke-width="5" opacity="0.75"/><rect x="270" y="-120" width="130" height="230" rx="12" fill="#c08a3e"/>
+        <rect x="290" y="-88" width="90" height="52" rx="6" fill="#faf7ef" opacity="0.85"/>
+        <path d="M290 10h90M290 42h64" stroke="#faf7ef" stroke-width="5" opacity="0.75"/>
+      <circle cx="330" cy="160" r="86" fill="#b4553f" opacity="0.75"/>
+    </g></g>
+  </g>
+</svg>

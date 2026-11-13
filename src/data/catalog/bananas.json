@@ -1,0 +1,59 @@
+{
+  "id": "bananas",
+  "names": {
+    "en": "Bananas",
+    "de": "Bananen",
+    "fr": "Bananes",
+    "it": "Banane",
+    "es": "Plátanos"
+  },
+  "description": {
+    "en": "Cultivated and speciality bananas in calibrated hands and clusters, handled to protect the peel and arrive at the right ripening stage. Packed for retail, catering and ethnic trade.",
+    "de": "Kultivierte Bananen und Spezialitäten in kalibrierten Händen und Clustern, schonend behandelt, damit die Schale geschützt bleibt und die Ware im richtigen Reifestadium ankommt. Verpackt für Detailhandel, Gastronomie und Spezialitätenhandel.",
+    "fr": "Bananes cultivées et spécialités en mains et grappes calibrées, manipulées avec soin pour préserver la peau et arriver au bon stade de maturation. Conditionnées pour le détail, la restauration et les marchés spécialisés.",
+    "it": "Banane coltivate e specialità in caschi e grappoli calibrati, manipolate con cura per proteggere la buccia e arrivare al giusto stadio di maturazione. Confezionate per distribuzione, ristorazione e mercati etnici.",
+    "es": "Plátanos cultivados y especialidades en manos y racimos calibrados, manipulados con cuidado para proteger la piel y llegar en el punto de maduración adecuado. Envasados para minoristas, restauración y mercados especializados."
+  },
+  "image": "/art/bananas.svg",
+  "products": [
+    {
+      "slug": "cavendish",
+      "name": { "en": "Cavendish banana", "de": "Cavendish-Banane", "fr": "Banane Cavendish", "it": "Banana Cavendish", "es": "Plátano Cavendish" },
+      "note": {
+        "en": "The everyday favourite: consistent size, sweet flesh and dependable ripening behaviour for high-volume retail.",
+        "de": "Der Alltagsfavorit: gleichmässige Grösse, süsses Fruchtfleisch und verlässliches Reifeverhalten für den grossen Detailhandel.",
+        "fr": "La préférée du quotidien : calibre régulier, chair douce et mûrissement fiable pour le détail à grand volume.",
+        "it": "La preferita di tutti i giorni: pezzatura costante, polpa dolce e maturazione affidabile per la grande distribuzione.",
+        "es": "La favorita de cada día: tamaño constante, pulpa dulce y maduración fiable para el minorista de gran volumen."
+      },
+      "image": "/art/bananas-cavendish.svg",
+      "regions": ["latin-america", "west-africa", "caribbean"]
+    },
+    {
+      "slug": "lady-finger",
+      "name": { "en": "Lady Finger banana", "de": "Lady-Finger-Banane", "fr": "Banane Lady Finger", "it": "Banana Lady Finger", "es": "Plátano Lady Finger" },
+      "note": {
+        "en": "Short, slender bananas with a honeyed sweetness and thin skin. A strong premium and food-service line.",
+        "de": "Kurze, schlanke Bananen mit honigsüssem Aroma und dünner Schale. Eine starke Premium- und Gastronomielinie.",
+        "fr": "Des bananes courtes et fines, à la douceur mielleuse et à la peau mince. Une belle ligne premium et restauration.",
+        "it": "Banane corte e sottili, con dolcezza di miele e buccia fine. Una linea premium e per la ristorazione.",
+        "es": "Plátanos cortos y delgados, de dulzor a miel y piel fina. Una línea premium y de restauración muy sólida."
+      },
+      "image": "/art/bananas-lady-finger.svg",
+      "regions": ["southeast-asia", "latin-america"]
+    },
+    {
+      "slug": "plantain",
+      "name": { "en": "Plantain", "de": "Kochbanane", "fr": "Banane plantain", "it": "Platano da cuocere", "es": "Plátano macho" },
+      "note": {
+        "en": "Starchy plantains for frying, roasting and traditional cooking, available at defined ripeness stages.",
+        "de": "Stärkehaltige Kochbananen zum Braten, Rösten und für die traditionelle Küche, erhältlich in definierten Reifestadien.",
+        "fr": "Des bananes plantains riches en amidon pour la friture, la cuisson au four et la cuisine traditionnelle, à des stades de maturation définis.",
+        "it": "Platani amidacei per frittura, cottura al forno e cucina tradizionale, disponibili a stadi di maturazione definiti.",
+        "es": "Plátanos machos ricos en almidón para freír, asar y cocina tradicional, disponibles en estados de maduración definidos."
+      },
+      "image": "/art/bananas-plantain.svg",
+      "regions": ["latin-america", "west-africa"]
+    }
+  ]
+}

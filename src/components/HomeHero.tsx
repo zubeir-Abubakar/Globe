@@ -1,34 +1,39 @@
 import Link from "next/link";
-import { MaskedText } from "@/components/Motion";
+import { MaskedText, Reveal } from "@/components/Motion";
+import { Photo } from "@/components/Photo";
+import type { Locale } from "@/lib/content";
+import { t } from "@/lib/i18n";
 
-export function HomeHero({
-  title,
-  description,
-  primaryAction,
-  primaryHref,
-  secondaryAction,
-  secondaryHref,
-}: {
-  title: string;
-  description: string;
-  primaryAction: string;
-  primaryHref: string;
-  secondaryAction: string;
-  secondaryHref: string;
-}) {
+export function HomeHero({ locale }: { locale: Locale }) {
   return (
-    <section className="hero">
-      <div className="container hero-content">
-        <div className="hero-topline"><span className="color-mark" /> PPO Services AG · Switzerland</div>
-        <MaskedText as="h1">{title}</MaskedText>
-        <p>{description}</p>
-        <div className="hero-actions">
-          <Link className="button button-primary" href={primaryHref}>
-            {primaryAction}
-          </Link>
-          <Link className="button button-secondary" href={secondaryHref}>
-            {secondaryAction}
-          </Link>
+    <section className="hh-hero">
+      <div className="container">
+        <div className="hh-hero-frame">
+          <Photo
+            src="/photos/hero.jpg"
+            alt={t(locale, "heroPhotoAlt")}
+            sizes="(max-width: 48rem) 100vw, 92vw"
+            priority
+            className="hh-hero-img"
+          />
+          <div className="hh-hero-content">
+            <Reveal as="span" className="hh-eyebrow">
+              <span className="color-mark" aria-hidden="true" />
+              {t(locale, "homeEyebrow")}
+            </Reveal>
+            <MaskedText as="h1">{t(locale, "heroTitle")}</MaskedText>
+            <Reveal as="p" delay={120}>
+              {t(locale, "heroCopy")}
+            </Reveal>
+            <Reveal className="hh-hero-actions" delay={220}>
+              <Link className="button button-primary" href={`/${locale}/products`}>
+                {t(locale, "heroPrimary")}
+              </Link>
+              <Link className="button button-secondary" href={`/${locale}/contact`}>
+                {t(locale, "heroSecondary")}
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

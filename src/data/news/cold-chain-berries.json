@@ -1,0 +1,46 @@
+{
+  "slug": "cold-chain-decides-berry-quality",
+  "date": "2026-08-07",
+  "image": "/art/news-2.svg",
+  "titles": {
+    "en": "Cold-chain discipline decides berry quality",
+    "de": "Kühlketten-Disziplin entscheidet über die Beerenqualität",
+    "fr": "La discipline du froid décide de la qualité des baies",
+    "it": "La disciplina della catena del freddo decide la qualità dei piccoli frutti",
+    "es": "La disciplina de la cadena de frío decide la calidad de los frutos rojos"
+  },
+  "excerpt": {
+    "en": "Berries lose more quality in the first twelve hours than in the following twelve days. Where the weak points usually sit.",
+    "de": "Beeren verlieren in den ersten zwölf Stunden mehr Qualität als in den folgenden zwölf Tagen. Wo die Schwachstellen meist liegen.",
+    "fr": "Les baies perdent plus de qualité dans les douze premières heures que dans les douze jours suivants. Où se situent les points faibles.",
+    "it": "I piccoli frutti perdono più qualità nelle prime dodici ore che nei dodici giorni successivi. Dove si trovano di solito i punti deboli.",
+    "es": "Los frutos rojos pierden más calidad en las primeras doce horas que en los doce días siguientes. Dónde suelen estar los puntos débiles."
+  },
+  "body": {
+    "en": [
+      "Berry quality is largely decided before the pallet reaches the distribution centre. Field heat removed quickly, dry packs and a short gap between harvest and pre-cooling matter more than a polished presentation at the loading dock. Every hour at ambient temperature shortens the commercial life of the fruit.",
+      "The weakest points are often the handovers: from field crate to packing line, from cold room to truck, from truck to forwarder's dock. A temperature logger tells you what happened, but only a named person at each handover changes what happens next time.",
+      "This note is illustrative demonstration content for the Globe Harvest website and does not describe a live commercial programme."
+    ],
+    "de": [
+      "Die Qualität von Beeren entscheidet sich weitgehend, bevor die Palette im Verteilzentrum ankommt. Schnell entzogene Feldwärme, trockene Verpackungen und eine kurze Zeitspanne zwischen Ernte und Vorkühlung zählen mehr als eine perfekte Präsentation an der Laderampe. Jede Stunde bei Umgebungstemperatur verkürzt das Handelsleben der Frucht.",
+      "Die schwächsten Stellen sind oft die Übergaben: von der Feldkiste zur Packlinie, vom Kühlraum zum Lastwagen, vom Lastwagen zur Rampe des Spediteurs. Ein Datenlogger zeigt, was passiert ist – aber nur ein benannter Verantwortlicher pro Übergabe verändert, was beim nächsten Mal passiert.",
+      "Dieser Beitrag ist illustrativer Demonstrationsinhalt der Globe-Harvest-Website und beschreibt kein laufendes Handelsprogramm."
+    ],
+    "fr": [
+      "La qualité des baies se décide en grande partie avant que la palette n'atteigne le centre de distribution. Une chaleur de champ évacuée rapidement, des barquettes sèches et un court délai entre récolte et pré-refroidissement comptent plus qu'une présentation soignée au quai. Chaque heure à température ambiante raccourcit la vie commerciale du fruit.",
+      "Les points faibles se situent souvent dans les transferts : de la caisse au poste de conditionnement, de la chambre froide au camion, du camion au quai du transitaire. Un enregistreur de température raconte ce qui s'est passé, mais seul un responsable nommé à chaque transfert change ce qui se passera ensuite.",
+      "Cette note est un contenu de démonstration pour le site Globe Harvest et ne décrit pas un programme commercial réel."
+    ],
+    "it": [
+      "La qualità dei piccoli frutti si decide in gran parte prima che il pallet arrivi al centro di distribuzione. Calore di campo rimosso rapidamente, vaschette asciutte e una breve distanza tra raccolta e pre-raffreddamento contano più di una presentazione curata alla banchina. Ogni ora a temperatura ambiente accorcia la vita commerciale del frutto.",
+      "I punti più deboli sono spesso i passaggi di consegna: dalla cassetta di campo alla linea di confezionamento, dalla cella frigorifera al camion, dal camion alla banchina dello spedizioniere. Un registratore di temperatura racconta cosa è successo; solo un responsabile nominato per ogni passaggio cambia ciò che accadrà la volta successiva.",
+      "Questa nota è contenuto dimostrativo per il sito Globe Harvest e non descrive un programma commerciale reale."
+    ],
+    "es": [
+      "La calidad de los frutos rojos se decide en gran medida antes de que el palé llegue al centro de distribución. El calor de campo eliminado con rapidez, los envases secos y un intervalo corto entre cosecha y prerrefrigeración importan más que una presentación impecable en el muelle. Cada hora a temperatura ambiente acorta la vida comercial de la fruta.",
+      "Los puntos más débiles suelen ser los traspasos: de la caja de campo a la línea de envasado, de la cámara frigorífica al camión, del camión al muelle del transitario. Un registrador de temperatura cuenta lo que ocurrió, pero solo un responsable designado en cada traspaso cambia lo que ocurrirá la próxima vez.",
+      "Esta nota es contenido ilustrativo de demostración del sitio Globe Harvest y no describe un programa comercial real."
+    ]
+  }
+}

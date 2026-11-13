@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img">
+  <defs>
+    <linearGradient id="bg-news3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7eedb"/>
+      <stop offset="1" stop-color="#efe0c4"/>
+    </linearGradient>
+    <radialGradient id="g-news3" cx="70%" cy="10%" r="80%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="c-news3"><rect width="1200" height="900"/></clipPath>
+  </defs>
+  <g clip-path="url(#c-news3)">
+    <rect width="1200" height="900" fill="url(#bg-news3)"/>
+    <rect width="1200" height="900" fill="url(#g-news3)"/>
+    <g transform="translate(600 450)"><g>
+      <path d="M-300 120Q-120-190 80-40T360-160" fill="none" stroke="#2f5d45" stroke-width="10" opacity="0.7"/>
+      <g fill="#c08a3e">
+        <circle cx="-230" cy="26" r="34"/><circle cx="-90" cy="-96" r="34"/><circle cx="60" cy="-10" r="34"/><circle cx="210" cy="-90" r="34"/><circle cx="320" cy="-186" r="34"/>
+      </g>
+      <path d="M-300 230h660" stroke="#8a7449" stroke-width="3" stroke-dasharray="10 14"/>
+    </g></g>
+  </g>
+</svg>

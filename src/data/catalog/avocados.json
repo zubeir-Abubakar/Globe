@@ -1,0 +1,59 @@
+{
+  "id": "avocados",
+  "names": {
+    "en": "Avocados",
+    "de": "Avocados",
+    "fr": "Avocats",
+    "it": "Avocado",
+    "es": "Aguacates"
+  },
+  "description": {
+    "en": "Creamy, slow-ripening avocados selected for consistent oil content, clean skin finish and reliable shelf life. Offered by count and size grade for retail, food service and ripening programmes.",
+    "de": "Cremige, langsam reifende Avocados, ausgewählt für einen gleichmässigen Ölgehalt, eine saubere Schale und eine zuverlässige Haltbarkeit. Erhältlich nach Stückzahl und Grössenklasse für Detailhandel, Gastronomie und Reifeprogramme.",
+    "fr": "Des avocats crémeux à maturation lente, sélectionnés pour leur teneur en huile régulière, leur peau nette et leur bonne tenue. Proposés au calibre et à la catégorie de calibre pour le commerce de détail, la restauration et les programmes de mûrissement.",
+    "it": "Avocado cremosi a maturazione lenta, selezionati per un contenuto di olio costante, una buccia pulita e una conservabilità affidabile. Disponibili a numero e calibro per distribuzione, ristorazione e programmi di maturazione.",
+    "es": "Aguacates cremosos de maduración lenta, seleccionados por su contenido constante de aceite, piel limpia y vida útil fiable. Se ofrecen por número y calibre para minoristas, restauración y programas de maduración."
+  },
+  "image": "/art/avocados.svg",
+  "products": [
+    {
+      "slug": "hass",
+      "name": { "en": "Hass avocado", "de": "Hass-Avocado", "fr": "Avocat Hass", "it": "Avocado Hass", "es": "Aguacate Hass" },
+      "note": {
+        "en": "The benchmark variety for year-round retail: dark, pebbled skin, dense flesh and a small stone. Suited to ripen-and-hold programmes.",
+        "de": "Die Referenzsorte für den ganzjährigen Detailhandel: dunkle, genarbte Schale, dichtes Fruchtfleisch und ein kleiner Kern. Geeignet für Reife- und Halteprogramme.",
+        "fr": "La variété de référence pour le commerce de détail toute l'année : peau sombre et granuleuse, chair dense et petit noyau. Adaptée aux programmes de mûrissement et de conservation.",
+        "it": "La varietà di riferimento per la distribuzione tutto l'anno: buccia scura e bollosa, polpa compatta e nocciolo piccolo. Adatta ai programmi di maturazione e conservazione.",
+        "es": "La variedad de referencia para el comercio minorista durante todo el año: piel oscura y granulosa, pulpa densa y hueso pequeño. Adecuada para programas de maduración y conservación."
+      },
+      "image": "/art/avocados-hass.svg",
+      "regions": ["latin-america", "southern-europe", "oceania"]
+    },
+    {
+      "slug": "fuerte",
+      "name": { "en": "Fuerte avocado", "de": "Fuerte-Avocado", "fr": "Avocat Fuerte", "it": "Avocado Fuerte", "es": "Aguacate Fuerte" },
+      "note": {
+        "en": "A slender, bright-green fruit with a smooth, buttery texture and a milder flavour. A steady seller in European wholesale markets.",
+        "de": "Eine schlanke, leuchtend grüne Frucht mit glatter, butteriger Textur und mildem Aroma. Ein verlässlicher Klassiker im europäischen Grosshandel.",
+        "fr": "Un fruit élancé, vert clair, à la texture lisse et beurrée et au goût plus doux. Un incontournable régulier du marché de gros européen.",
+        "it": "Un frutto slanciato e verde brillante, dalla texture liscia e burrosa e dal sapore più delicato. Una presenza costante nel commercio all'ingrosso europeo.",
+        "es": "Una fruta alargada de color verde brillante, textura lisa y mantecosa y sabor más suave. Un valor constante en el comercio mayorista europeo."
+      },
+      "image": "/art/avocados-fuerte.svg",
+      "regions": ["latin-america", "southern-europe"]
+    },
+    {
+      "slug": "reed",
+      "name": { "en": "Reed avocado", "de": "Reed-Avocado", "fr": "Avocat Reed", "it": "Avocado Reed", "es": "Aguacate Reed" },
+      "note": {
+        "en": "A large, round summer avocado with thick skin that travels well and slices cleanly. Popular for food service and prepared formats.",
+        "de": "Eine grosse, runde Sommerfrucht mit dicker Schale, die gut reist und sich sauber schneiden lässt. Beliebt in der Gastronomie und bei vorbereiteten Formaten.",
+        "fr": "Un gros avocat rond d'été à la peau épaisse, qui voyage bien et se tranche nettement. Apprécié en restauration et pour les formats préparés.",
+        "it": "Un avocado estivo grande e rotondo, con buccia spessa che sopporta bene il viaggio e si affetta con precisione. Apprezzato nella ristorazione e nei formati preparati.",
+        "es": "Un aguacate grande y redondo de verano, de piel gruesa que viaja bien y se corta con limpieza. Muy apreciado en restauración y formatos preparados."
+      },
+      "image": "/art/avocados-reed.svg",
+      "regions": ["latin-america", "southern-europe"]
+    }
+  ]
+}

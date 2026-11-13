@@ -1,0 +1,59 @@
+{
+  "id": "mangoes",
+  "names": {
+    "en": "Mangoes",
+    "de": "Mangos",
+    "fr": "Mangues",
+    "it": "Mango",
+    "es": "Mangos"
+  },
+  "description": {
+    "en": "Fragrant, fibre-light mangoes with calibrated brix and mature-green shipping. Graded for uniform size, colour expression and arrival condition in European programmes.",
+    "de": "Aromatische, faserarme Mangos mit kalibriertem Brix-Wert und Versand im reifen Grünzustand. Sortiert auf gleichmässige Grösse, Farbausprägung und Ankunftsqualität für europäische Programme.",
+    "fr": "Des mangues parfumées et peu fibreuses, à brix calibré et expédiées vertes-mûres. Calibrées pour une taille homogène, une belle expression de couleur et une bonne qualité à l'arrivée.",
+    "it": "Mango profumati e poco fibrosi, con brix calibrato e spedizione a maturazione verde. Selezionati per pezzatura uniforme, espressione del colore e condizione all'arrivo.",
+    "es": "Mangos aromáticos y con poca fibra, de brix calibrado y envío en verde maduro. Clasificados por tamaño uniforme, expresión de color y condición de llegada."
+  },
+  "image": "/art/mangoes.svg",
+  "products": [
+    {
+      "slug": "kent",
+      "name": { "en": "Kent mango", "de": "Kent-Mango", "fr": "Mangue Kent", "it": "Mango Kent", "es": "Mango Kent" },
+      "note": {
+        "en": "A large, green-yellow mango with rich, juicy flesh and very little fibre. Well suited to supermarket and wholesale assortments.",
+        "de": "Eine grosse, grün-gelbe Mango mit saftigem, aromatischem Fruchtfleisch und kaum Fasern. Ideal für Supermarkt- und Grosshandelssortimente.",
+        "fr": "Une grosse mangue vert-jaune à la chair juteuse et très peu fibreuse. Bien adaptée aux assortiments de supermarchés et de grossistes.",
+        "it": "Un mango grande, verde-giallo, con polpa succosa e aromatica e quasi senza fibre. Adatto agli assortimenti di supermercati e grossisti.",
+        "es": "Un mango grande, verde amarillo, de pulpa jugosa y aromática y muy poca fibra. Adecuado para surtidos de supermercado y mayoristas."
+      },
+      "image": "/art/mangoes-kent.svg",
+      "regions": ["west-africa", "latin-america", "south-asia"]
+    },
+    {
+      "slug": "keitt",
+      "name": { "en": "Keitt mango", "de": "Keitt-Mango", "fr": "Mangue Keitt", "it": "Mango Keitt", "es": "Mango Keitt" },
+      "note": {
+        "en": "A late-season variety that holds its green skin while ripening. Firm flesh and a balanced, sweet-tart profile.",
+        "de": "Eine späte Sorte, die ihre grüne Schale während der Reifung behält. Festes Fruchtfleisch und ein ausgewogen süss-säuerliches Profil.",
+        "fr": "Une variété de fin de saison qui conserve sa peau verte en mûrissant. Chair ferme et profil équilibré, doux et légèrement acidulé.",
+        "it": "Una varietà di fine stagione che mantiene la buccia verde durante la maturazione. Polpa soda e profilo equilibrato, dolce e leggermente acidulo.",
+        "es": "Una variedad de final de temporada que conserva la piel verde mientras madura. Pulpa firme y perfil equilibrado, dulce y ligeramente ácido."
+      },
+      "image": "/art/mangoes-keitt.svg",
+      "regions": ["west-africa", "latin-america"]
+    },
+    {
+      "slug": "palmer",
+      "name": { "en": "Palmer mango", "de": "Palmer-Mango", "fr": "Mangue Palmer", "it": "Mango Palmer", "es": "Mango Palmer" },
+      "note": {
+        "en": "A long, deep-orange fruit with soft, sweet flesh and a small stone. Strong visual appeal on the shelf.",
+        "de": "Eine lange, tief orange Frucht mit weichem, süssem Fruchtfleisch und kleinem Kern. Sehr attraktiv im Regal.",
+        "fr": "Un fruit allongé d'un orange profond, à la chair douce et sucrée et au petit noyau. Très bel impact visuel en rayon.",
+        "it": "Un frutto allungato, di colore arancione intenso, con polpa morbida e dolce e nocciolo piccolo. Di grande impatto visivo sullo scaffale.",
+        "es": "Una fruta alargada de color naranja intenso, con pulpa blanda y dulce y hueso pequeño. Un gran atractivo visual en el lineal."
+      },
+      "image": "/art/mangoes-palmer.svg",
+      "regions": ["latin-america", "west-africa"]
+    }
+  ]
+}

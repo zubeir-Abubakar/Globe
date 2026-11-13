@@ -1,0 +1,59 @@
+{
+  "id": "berries",
+  "names": {
+    "en": "Berries",
+    "de": "Beeren",
+    "fr": "Baies",
+    "it": "Piccoli frutti",
+    "es": "Frutos rojos"
+  },
+  "description": {
+    "en": "Delicate berries packed for a short, cool chain: firm fruit, dry packs and clear origin labelling. Selected for flavour first and shelf life second — never the other way round.",
+    "de": "Empfindliche Beeren für eine kurze, gekühlte Kette: feste Früchte, trockene Verpackungen und klare Herkunftsangaben. Zuerst nach Geschmack ausgewählt, dann nach Haltbarkeit – nie umgekehrt.",
+    "fr": "Des baies délicates conditionnées pour une chaîne courte et réfrigérée : fruits fermes, barquettes sèches et origine clairement indiquée. Sélectionnées d'abord pour le goût, ensuite pour la tenue.",
+    "it": "Piccoli frutti delicati, confezionati per una catena breve e refrigerata: frutti sodi, vaschette asciutte e origine chiaramente indicata. Selezionati prima per il sapore, poi per la conservabilità.",
+    "es": "Frutos rojos delicados, envasados para una cadena corta y refrigerada: fruta firme, envases secos y origen claramente indicado. Seleccionados primero por el sabor y después por la conservación."
+  },
+  "image": "/art/berries.svg",
+  "products": [
+    {
+      "slug": "blueberries",
+      "name": { "en": "Blueberries", "de": "Heidelbeeren", "fr": "Myrtilles", "it": "Mirtilli", "es": "Arándanos" },
+      "note": {
+        "en": "Plump blueberries with a firm bloom and a sweet, balanced bite. Packed in punnets and bulk trays for retail and bakery.",
+        "de": "Pralle Heidelbeeren mit festem Reif und süssem, ausgewogenem Biss. Verpackt in Schalen und Grossgebinden für Detailhandel und Backgewerbe.",
+        "fr": "Des myrtilles charnues à la pruine ferme et à la bouchée douce et équilibrée. Conditionnées en barquettes et bacs pour le détail et la boulangerie.",
+        "it": "Mirtilli polposi con pruina soda e gusto dolce ed equilibrato. Confezionati in vaschette e cassette sfuse per distribuzione e panetteria.",
+        "es": "Arándanos carnosos con pruina firme y un bocado dulce y equilibrado. Envasados en bandejas y cajas a granel para minoristas y panadería."
+      },
+      "image": "/art/berries-blueberries.svg",
+      "regions": ["southern-europe", "latin-america", "north-africa"]
+    },
+    {
+      "slug": "raspberries",
+      "name": { "en": "Raspberries", "de": "Himbeeren", "fr": "Framboises", "it": "Lamponi", "es": "Frambuesas" },
+      "note": {
+        "en": "Bright, fragrant raspberries with a clean drupelet structure. Best moved quickly and kept cold.",
+        "de": "Leuchtende, aromatische Himbeeren mit sauberer Steinfruchtstruktur. Am besten schnell umgeschlagen und kühl gelagert.",
+        "fr": "Des framboises éclatantes et parfumées, à la structure nette. À acheminer rapidement et à conserver au froid.",
+        "it": "Lamponi brillanti e profumati, con struttura pulita delle drupeole. Da movimentare rapidamente e conservare al fresco.",
+        "es": "Frambuesas brillantes y aromáticas, con una estructura limpia de drupéolas. Conviene moverlas rápido y mantenerlas frías."
+      },
+      "image": "/art/berries-raspberries.svg",
+      "regions": ["southern-europe", "latin-america"]
+    },
+    {
+      "slug": "blackberries",
+      "name": { "en": "Blackberries", "de": "Brombeeren", "fr": "Mûres", "it": "More", "es": "Moras" },
+      "note": {
+        "en": "Deep, glossy blackberries with a rich, slightly tart finish. A strong dessert and breakfast line.",
+        "de": "Tiefschwarze, glänzende Brombeeren mit reichem, leicht säuerlichem Abgang. Eine starke Dessert- und Frühstückslinie.",
+        "fr": "Des mûres noires et brillantes, à la finale riche et légèrement acidulée. Une belle ligne pour les desserts et le petit-déjeuner.",
+        "it": "More nere e lucide, con finale ricco e leggermente acidulo. Una linea forte per dessert e colazione.",
+        "es": "Moras negras y brillantes, de final intenso y ligeramente ácido. Una línea sólida para postres y desayuno."
+      },
+      "image": "/art/berries-blackberries.svg",
+      "regions": ["southern-europe", "latin-america", "north-africa"]
+    }
+  ]
+}
