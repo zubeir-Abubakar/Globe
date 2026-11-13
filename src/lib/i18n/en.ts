@@ -150,6 +150,8 @@ export const en = {
   invalidOrigin: "This request could not be verified. Please reload the page and try again.",
   requestTooLarge: "The submitted form is too large.",
   formUnreadable: "The submitted form could not be read. Please try again.",
+  rateLimited:
+    "Too many submissions from this connection. Please wait a few minutes or contact us by email.",
   invalidSubmission: "This form submission is invalid.",
   attachmentCount: "Please attach no more than four files.",
   attachmentInvalid: "Use PDF, DOCX, PNG or JPEG files no larger than 5 MB each.",

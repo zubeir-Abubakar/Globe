@@ -51,9 +51,10 @@ function alternates(locale: Locale, path: string) {
   const suffix = path ? `/${path}` : "";
   return {
     canonical: `/${locale}${suffix}`,
-    languages: Object.fromEntries(
-      locales.map((code) => [code, `/${code}${suffix}`]),
-    ),
+    languages: {
+      ...Object.fromEntries(locales.map((code) => [code, `/${code}${suffix}`])),
+      "x-default": `/en${suffix}`,
+    },
   };
 }
 

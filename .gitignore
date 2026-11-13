@@ -37,6 +37,9 @@ ehthumbs.db
 *.swo
 *~
 
+# Local release packaging
+release/
+
 # Local tooling and deployment state
 .freebuff/
 .turbo/

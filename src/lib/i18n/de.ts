@@ -150,6 +150,8 @@ export const de = {
   invalidOrigin: "Diese Anfrage konnte nicht verifiziert werden. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
   requestTooLarge: "Das übermittelte Formular ist zu gross.",
   formUnreadable: "Das Formular konnte nicht gelesen werden. Bitte versuchen Sie es erneut.",
+  rateLimited:
+    "Zu viele Einsendungen von dieser Verbindung. Bitte warten Sie einige Minuten oder kontaktieren Sie uns per E-Mail.",
   invalidSubmission: "Diese Formulareingabe ist ungültig.",
   attachmentCount: "Bitte fügen Sie höchstens vier Dateien an.",
   attachmentInvalid: "Verwenden Sie PDF-, DOCX-, PNG- oder JPEG-Dateien bis maximal 5 MB pro Datei.",

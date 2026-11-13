@@ -150,6 +150,8 @@ export const it = {
   invalidOrigin: "La richiesta non può essere verificata. Ricaricate la pagina e riprovate.",
   requestTooLarge: "Il modulo inviato è troppo grande.",
   formUnreadable: "Non è stato possibile leggere il modulo. Riprovate.",
+  rateLimited:
+    "Troppi invii da questa connessione. Attendi qualche minuto o contattaci via e-mail.",
   invalidSubmission: "L'invio del modulo non è valido.",
   attachmentCount: "Allegate al massimo quattro file.",
   attachmentInvalid: "Usate file PDF, DOCX, PNG o JPEG da massimo 5 MB ciascuno.",

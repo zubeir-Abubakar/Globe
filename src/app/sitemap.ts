@@ -22,9 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: path === "" ? ("weekly" as const) : ("monthly" as const),
       priority: path === "" ? 1 : path.startsWith("products") ? 0.8 : 0.6,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((code) => [code, `${site.url}/${code}${path ? `/${path}` : ""}`]),
-        ),
+        languages: {
+          ...Object.fromEntries(
+            locales.map((code) => [code, `${site.url}/${code}${path ? `/${path}` : ""}`]),
+          ),
+          "x-default": `${site.url}/en${path ? `/${path}` : ""}`,
+        },
       },
     })),
   );

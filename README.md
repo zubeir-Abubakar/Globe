@@ -1,15 +1,16 @@
 # Globe Harvest
 
+**Premium Multilingual Fresh Produce Website**
+
 Globe Harvest is a modern multilingual fresh-produce trading and catalogue
-website. It presents a ten-category B2B produce portfolio, editorial company and
+website product. It presents a ten-category B2B produce portfolio, editorial company and
 quality pages, illustrative market notes and a validated buyer-enquiry form in
 English, German, French, Italian and Spanish.
 
 Globe Harvest is an independently created demonstration brand. It is **not** an
-official website of PPO, a producer organisation or any other existing company,
-and it is not affiliated with or endorsed by one. The business, products,
-sourcing regions and market notes are illustrative rather than records of live
-trading.
+official website of any producer organisation or existing company, and it is not
+affiliated with or endorsed by one. The business, products, sourcing regions and
+market notes are illustrative rather than records of live trading.
 
 > **Status:** demonstration product, not an operating company. There are no real
 > customers, supplier relationships, export volumes, certifications, revenue or
@@ -44,7 +45,8 @@ demonstration content at a 1440 px desktop width and a 390 px mobile width.
 - **Five complete language versions** for navigation, UI, catalogue copy, editorial
   pages, market notes and form labels.
 - **Contact form** with server-side Zod validation, honeypot, request-size limits,
-  origin check, attachment type/signature checks and an explicit demonstration mode.
+  origin check, attachment type/signature checks, best-effort per-IP rate limiting
+  and an explicit demonstration mode.
 - **Navigation** with a product mega-menu, search dialog, accessible mobile drawer
   and language switcher that preserves the current route.
 - **SEO foundations**: localized titles and descriptions, canonical URLs, hreflang
@@ -72,7 +74,7 @@ demonstration content at a 1440 px desktop width and a 390 px mobile width.
 | Linting | ESLint 9 with `eslint-config-next` core-web-vitals and TypeScript rules |
 | Images | `next/image` for local JPEG photography and SVG artwork |
 | Fonts | DM Serif Display and Inter, loaded from Google Fonts CSS (SIL OFL 1.1) |
-| Testing | No automated test framework is configured |
+| Testing | Node.js built-in test runner (`node --test`) for production HTTP and contact-API tests |
 | Deployment | Vercel (recommended) or any Node.js host able to run Next.js |
 
 Versions above reflect `package-lock.json`. Use `npm ci` for a reproducible install.
@@ -115,6 +117,7 @@ This release was verified locally with Node.js 25.9.0 and npm 11.12.1.
 ## Installation and onboarding
 
 ```sh
+# If you received the source as a zip, extract it and cd into that folder instead.
 git clone YOUR_REPOSITORY_URL
 cd globe-harvest
 npm ci
@@ -160,6 +163,16 @@ default. Override the port with `PORT=3100 npm run preview` if needed.
 
 `npm start` is also available for deployment platforms that expect that command.
 
+After a successful build, run the focused production tests:
+
+```sh
+npm test
+```
+
+The test command starts its own temporary Next.js servers (including a local mock
+form endpoint), exercises the public routes and contact API, and stops them when
+finished. It does not contact a real email provider.
+
 ## Environment variables
 
 | Variable | Purpose | Required | Public or Secret | Consumer |
@@ -187,6 +200,7 @@ secret-management interface.
 ```text
 .
 ├── docs/screenshots/              README preview images
+├── tests/                         Production HTTP and contact-API tests
 ├── public/
 │   ├── art/                       Original generated catalogue and editorial SVGs
 │   ├── brand/                     Supplied master logo, release lockups and icons
@@ -221,7 +235,8 @@ secret-management interface.
 ├── tsconfig.json
 ├── design.md                       Brand and design-system notes
 ├── LICENSING.md                    Code, asset and dependency licensing review
-└── PHOTO-CREDITS.md                Photo authors, licences and sources
+├── PHOTO-CREDITS.md                Photo authors, licences and sources
+└── EXCLUSIVE-TRANSFER-CHECKLIST.md Buyer handover checklist
 ```
 
 Generated folders such as `.next/`, `node_modules/` and coverage output are ignored
@@ -313,6 +328,50 @@ maps, add the dictionary, update the proxy's supported list, and add the locale 
 the metadata/OG locale maps. Search `locales`, `languageNames` and `supportedLocales`
 for the complete set of touchpoints.
 
+## Customisation guide
+
+| What to change | Where |
+| --- | --- |
+| Business name, email, phone and address | `src/lib/site.ts`, `.env.example`, and the brand strings in the navigation/footer |
+| Logo and icons | Replace files in `public/brand`, then update the image dimensions in `src/components/SiteHeader.tsx` and `src/components/SiteFooter.tsx` if the aspect ratio changes |
+| Colours and type scale | `src/app/tokens.css`; keep the existing token structure rather than adding a second design system |
+| Homepage copy | `src/lib/i18n/*.ts`, especially the `hero*`, `intro*`, `portfolio*` and `closing*` keys |
+| Products and categories | `src/data/catalog/*.json` and `src/lib/content.ts`; see the catalogue section above |
+| Editorial pages and market notes | `src/data/pages/*.json` and `src/data/news/*.json` |
+| Photography | Replace the matching file in `public/photos`, keep the filename or update `src/lib/photos.ts`, then update both credit files |
+| Canonical domain and social metadata | `SITE_URL` and the metadata functions in `src/app/layout.tsx` and `src/app/[locale]/[[...segments]]/page.tsx` |
+| Contact delivery | `CONTACT_FORM_ENDPOINT` and the provider instructions below |
+| Deployment | `next.config.ts`, the host's Node version and the environment variables |
+
+For a complete rebrand, also update `package.json`, `README.md`, `design.md`,
+`public/brand`, the manifest, the Open Graph image and the email/address placeholders.
+Do not claim that the supplied logo is cleared for the buyer until its ownership has
+been confirmed. See `LICENSING.md`.
+
+## Known limitations
+
+- This is a demonstration website product, not an operating fresh-produce business.
+  Products, sourcing regions, market notes and company copy are illustrative.
+- There is no database, CMS, stock ledger, shopping cart, checkout, payment
+  processing or customer account system.
+- There is no analytics or consent-management platform configured. Add one only
+  with the buyer's privacy review.
+- The contact form is disabled until the buyer configures a delivery endpoint. The
+  repository contains no live endpoint or provider credential.
+- The built-in rate limiter is in-process and best-effort. It requires a trusted
+  `x-forwarded-for`, `x-real-ip` or `cf-connecting-ip` header from the host/reverse
+  proxy. Use the hosting platform's WAF or edge rate limiting for a hard guarantee.
+- DOCX uploads are checked by extension, MIME type, size and ZIP signature. The
+  route does not unpack and deeply inspect the document. The provider should apply
+  its own malware scanning if attachments are accepted in production.
+- Automated tests cover production routes and the contact API. There is no
+  Playwright/end-to-end suite, visual-regression suite or automated accessibility
+  audit in the package.
+- Fonts are requested from Google Fonts at runtime. Self-host the OFL font files if
+  the deployment must avoid that third-party request.
+- All photographs are CC0/public domain and therefore non-exclusive. The logo's
+  provenance remains an owner decision.
+
 ## Contact form configuration
 
 The form component posts multipart form data to `/api/contact`. The route:
@@ -323,6 +382,8 @@ The form component posts multipart form data to `/api/contact`. The route:
 - uses a hidden honeypot field;
 - allows up to four PDF, DOCX, PNG or JPEG attachments, with per-file and combined
   size limits and file-signature checks;
+- applies a best-effort in-process limit of eight submissions per client address in
+  a ten-minute window when the host supplies a trusted client-IP header;
 - forwards valid submissions to `CONTACT_FORM_ENDPOINT` only on the server.
 
 With `CONTACT_FORM_ENDPOINT` empty, the site is in **demonstration mode**. The form
@@ -342,7 +403,13 @@ To connect a provider:
 5. Check the demo notice disappears, the button becomes enabled and failures show a
    non-success message.
 
-The repository does not contain a live endpoint.
+The repository does not contain a live endpoint. The historical endpoint exposed in
+older repository history is not used here and must be rotated or deactivated by its
+owner; this release does not claim that either action has happened.
+
+The built-in limiter is per Node.js process and is not shared across serverless
+instances. The recommended Vercel/edge deployment should also configure platform
+rate limiting or a WAF for the contact route. See `EXCLUSIVE-TRANSFER-CHECKLIST.md`.
 
 ## Deployment to Vercel
 
@@ -399,10 +466,22 @@ credentials, generated `.next` output and local screenshots out of commits. Run
 then repeat lint, typecheck and build. Do not update major versions without reviewing
 the Next.js and React migration notes.
 
-There is no `npm test` script because no automated test framework is included.
-Content and route checks are currently manual plus lint, strict TypeScript and the
-production build. Adding a test runner is a sensible next step before a commercial
-launch.
+`npm test` uses the Node.js built-in test runner. It starts two temporary production
+servers and a local mock form receiver, then checks public routes, locale metadata,
+SEO files, asset delivery, contact validation, honeypot/origin/file protections and
+rate limiting. It requires a completed `npm run build` but does not require a live
+provider account. Use `npm run lint`, `npm run typecheck` and `npm run build` before
+shipping changes.
+
+## Commercial handover
+
+This package is prepared as a source-code product for one buyer. Use
+`EXCLUSIVE-TRANSFER-CHECKLIST.md` for the delivery, setup, domain, hosting,
+contact-form, brand, catalogue, language, asset-licence and ownership steps. The
+checklist is not a legal agreement; the actual exclusive transfer must be documented
+separately. The source-code terms, brand ownership and the non-exclusive nature of
+the CC0 photography still require the seller's decisions described in
+`LICENSING.md`.
 
 ## Licensing and third-party assets
 
@@ -418,11 +497,11 @@ licence or sale terms before publishing a public repository.
 - **Generated artwork:** the catalogue/editorial SVGs in `public/art` are produced by
   `scripts/generate-art.mjs` for this project. Their terms follow the project's
   (undecided) licence.
-- **Photography:** `public/photos` contains CC0, CC BY-SA 2.5, CC BY-SA 3.0 and
-  CC BY-SA 4.0 images. Credits and sources are in `PHOTO-CREDITS.md` and
-  `public/photos/credits.json`. Keep the credits. CC BY-SA images carry attribution
-  and share-alike obligations for adaptations; they cannot be sold on an exclusive
-  basis. Replace them with commissioned photography if exclusivity is required.
+- **Photography:** all 17 photographs in `public/photos` are CC0 or public domain.
+  Credits, authors, sources and modifications are in `PHOTO-CREDITS.md` and
+  `public/photos/credits.json`. Keep the credit files. CC0 permits commercial use and
+  modification without share-alike, but it is non-exclusive: the same source image
+  can be used by others, so the seller cannot promise exclusive rights to the image.
 - **Fonts:** DM Serif Display and Inter are loaded from Google Fonts and licensed
   under the SIL Open Font License 1.1. No font binaries are redistributed here.
 - **Dependencies:** the direct runtime dependencies are MIT-licensed; TypeScript and
@@ -440,9 +519,11 @@ claim real customers, suppliers, volumes, certifications, traffic or revenue. Th
 sourcing information, market notes and photography are illustrative or openly
 licensed content, not evidence of commercial operations.
 
-The application has been checked with lint, strict TypeScript and a production build.
-No automated browser, accessibility or end-to-end test suite is included. The
-contact form has not been verified against a live provider in this repository.
+The application has been checked with lint, strict TypeScript, a production build and
+the focused Node.js production/API test suite. The tests use a local mock form
+receiver; the contact form has not been verified against a live provider in this
+repository. There is no automated browser, visual-regression or accessibility suite.
+See `EXCLUSIVE-TRANSFER-CHECKLIST.md` for the buyer handover steps.
 
 ## Verification
 
@@ -451,9 +532,11 @@ npm ci
 npm run lint
 npm run typecheck
 npm run build
+npm test
 ```
 
-For a quick production smoke test:
+`npm test` starts its own temporary production servers, so it does not need a
+separate terminal. For a manual visual review:
 
 ```sh
 PORT=3100 npm run preview
@@ -461,4 +544,5 @@ PORT=3100 npm run preview
 
 Then open `/en`, `/en/products`, a product detail page and `/en/contact`. Check the
 console for errors and confirm the demo-mode notice is visible when no endpoint is
-configured.
+configured. Regenerate the screenshots in `docs/screenshots/` after changing the
+homepage or brand assets.

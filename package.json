@@ -2,7 +2,7 @@
   "name": "globe-harvest-web",
   "version": "1.0.0",
   "private": true,
-  "description": "A modern multilingual fresh-produce trading and catalogue website for the independent Globe Harvest demonstration brand.",
+  "description": "A premium multilingual fresh-produce website product for the independent Globe Harvest demonstration brand.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,6 +10,7 @@
     "preview": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
+    "test": "node --test tests/site.test.mjs tests/contact.test.mjs",
     "art": "node scripts/generate-art.mjs"
   },
   "engines": {

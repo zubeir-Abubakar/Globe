@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { checkContactRateLimit, clientAddress } from "@/lib/contact-rate-limit";
 import { isLocale, type Locale } from "@/lib/content";
 import { t } from "@/lib/i18n";
 import { site } from "@/lib/site";
@@ -104,10 +105,15 @@ async function hasExpectedSignature(file: File, extension: string) {
   return false;
 }
 
-function json(message: string, status: number, errors?: Record<string, string>) {
+function json(
+  message: string,
+  status: number,
+  errors?: Record<string, string>,
+  headers: Record<string, string> = {},
+) {
   return NextResponse.json(
     { message, ...(errors ? { errors } : {}) },
-    { status, headers: { "Cache-Control": "no-store" } },
+    { status, headers: { "Cache-Control": "no-store", ...headers } },
   );
 }
 
@@ -133,6 +139,16 @@ export async function POST(request: Request) {
       }
     } catch {
       return json(t(responseLocale, "invalidOrigin"), 403);
+    }
+  }
+
+  const address = clientAddress(request);
+  if (address) {
+    const rateLimit = checkContactRateLimit(address);
+    if (rateLimit.limited) {
+      return json(t(responseLocale, "rateLimited"), 429, undefined, {
+        "Retry-After": String(rateLimit.retryAfter),
+      });
     }
   }
 

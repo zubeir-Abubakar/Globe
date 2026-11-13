@@ -17,11 +17,12 @@
   },
   "mangoes": {
     "local": "/photos/mangoes.jpg",
-    "title": "Mango fruits.JPG",
-    "artist": "Bhaskaranaidu",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Mango_fruits.JPG"
+    "title": "Carabao Mangoes from Cebu, Philippines.jpg",
+    "artist": "Bim24",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Carabao_Mangoes_from_Cebu,_Philippines.jpg",
+    "note": "Resized to 1400x1050; no other modification."
   },
   "pineapples": {
     "local": "/photos/pineapples.jpg",
@@ -74,11 +75,12 @@
   },
   "tropical": {
     "local": "/photos/tropical.jpg",
-    "title": "Papaya raindrop.jpg",
-    "artist": "Muhammad Mahdi Karim",
-    "license": "CC BY-SA 2.5",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-    "source": "https://commons.wikimedia.org/wiki/File:Papaya_raindrop.jpg"
+    "title": "Tropical fruit bowl window (Unsplash).jpg",
+    "artist": "Marcello Aquino marcelloaquino",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Tropical_fruit_bowl_window_(Unsplash).jpg",
+    "note": "Resized and centre-cropped to 1400x933."
   },
   "vegetables": {
     "local": "/photos/vegetables.jpg",
@@ -106,11 +108,12 @@
   },
   "feat-hass": {
     "local": "/photos/feat-hass.jpg",
-    "title": "Liat Portal for Foodie Disorder - Avocado Halves.jpg",
-    "artist": "HaJunkiyada",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Avocado_Halves.jpg"
+    "title": "Nice Avocados.jpg",
+    "artist": "ProjectManhattan",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Nice_Avocados.jpg",
+    "note": "EXIF orientation applied, then centre-cropped and resized to 900x1200."
   },
   "feat-blueberries": {
     "local": "/photos/feat-blueberries.jpg",

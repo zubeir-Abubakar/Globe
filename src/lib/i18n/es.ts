@@ -150,6 +150,8 @@ export const es = {
   invalidOrigin: "No se pudo verificar la solicitud. Recargue la página e inténtelo de nuevo.",
   requestTooLarge: "El formulario enviado es demasiado grande.",
   formUnreadable: "No se pudo leer el formulario. Inténtelo de nuevo.",
+  rateLimited:
+    "Demasiados envíos desde esta conexión. Espera unos minutos o contáctanos por correo electrónico.",
   invalidSubmission: "El envío del formulario no es válido.",
   attachmentCount: "Adjunte un máximo de cuatro archivos.",
   attachmentInvalid: "Use archivos PDF, DOCX, PNG o JPEG de hasta 5 MB cada uno.",
